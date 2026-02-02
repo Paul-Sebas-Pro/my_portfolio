@@ -1,20 +1,43 @@
 ---
 import "../../styles/global.css";
+import ProjectCard from "../../components/ProjectCard.astro";
+
+// On simule une petite DB de projets
+const myProjects = [
+  {
+    title: "MyQuiz",
+    description: "Plateforme SaaS de quiz avec pipeline CI/CD, tests automatisés et déploiement Docker.",
+    stack: ["Node.js", "PostgreSQL", "Docker", "GitHub Actions"],
+    githubUrl: "#",
+    category: "Full-Stack & DevOps"
+  },
+  {
+    title: "MyChat",
+    description: "Interface conversationnelle intelligente exploitant l'API de Mistral AI pour l'assistance métier.",
+    stack: ["Svelte", "Node.js", "Mistral AI API"],
+    githubUrl: "#",
+    category: "IA / Innovation"
+  }
+];
 ---
 
 <html lang="fr">
-	<head>
-		<meta charset="utf-8" />
-		<title>Portfolio | Développeur Full-Stack</title>
-	</head>
-	<body class="bg-slate-950 text-slate-50 antialiased">
-		<main class="max-w-4xl mx-auto px-6 py-20">
-			<h1 class="text-5xl font-extrabold tracking-tight">
-				Hello, je suis <span class="text-blue-500">ton nom</span>.
-			</h1>
-			<p class="mt-4 text-xl text-slate-400">
-				Développeur Full-Stack spécialisé en SaaS et DevOps.
-			</p>
+	<body class="bg-slate-950 text-slate-50">
+		<main class="max-w-5xl mx-auto px-6 py-24">
+			
+      <section id="projets">
+        <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
+          <span class="h-px w-12 bg-blue-500"></span>
+          Projets Sélectionnés
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {myProjects.map((project) => (
+            <ProjectCard {...project} />
+          ))}
+        </div>
+      </section>
+
 		</main>
 	</body>
 </html>
