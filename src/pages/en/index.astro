@@ -1,1 +1,41 @@
-Page EN
+Page EN---
+import MainLayout from "../../layouts/MainLayout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import { ui } from "../../i18n/ui";
+
+const lang = 'en';
+const t = ui[lang];
+
+const myProjects = [
+  {
+    title: "MyQuiz",
+    description: "SaaS quiz platform with CI/CD pipeline, automated testing, and Docker deployment.",
+    stack: ["Node.js", "PostgreSQL", "Docker", "GitHub Actions"],
+    githubUrl: "#",
+    category: "Full-Stack & DevOps"
+  },
+  {
+    title: "MyChat",
+    description: "Intelligent conversational interface leveraging the Mistral AI API for business assistance.",
+    stack: ["Svelte", "Node.js", "Mistral AI API"],
+    githubUrl: "#",
+    category: "IA / Innovation"
+  }
+];
+---
+
+<MainLayout title="Accueil" lang={lang}>
+  <main class="max-w-5xl mx-auto px-6 pt-32">
+    <section class="mb-20">
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+        {t['hero.title']}
+      </h1>
+      <p class="text-xl text-slate-400 max-w-2xl leading-relaxed">
+        {t['hero.desc']}
+      </p>
+    </section>
+
+    <section id="projets">
+        </section>
+  </main>
+</MainLayout>

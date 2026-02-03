@@ -1,0 +1,62 @@
+---
+import "../styles/global.css";
+import { ui } from "../i18n/ui";
+
+interface Props {
+  title: string;
+  lang: 'fr' | 'en';
+}
+
+const { title, lang } = Astro.props;
+const t = ui[lang];
+---
+
+<html lang={lang} class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Portfolio</title>
+    <meta name="description" content="Portfolio de développeur Full-Stack expert en solutions SaaS et DevOps" />
+  </head>
+  <body class="bg-slate-950 text-slate-50 antialiased selection:bg-blue-500/30">
+    
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
+      <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href={`/${lang}`} class="font-bold text-xl tracking-tighter hover:text-blue-400 transition-colors">
+          NOM<span class="text-blue-500">.</span>PRENOM
+        </a>
+        
+        <div class="flex items-center gap-8">
+          <ul class="hidden md:flex gap-6 text-sm font-medium text-slate-400">
+            <li><a href="#projets" class="hover:text-white transition-colors">{t['nav.projects']}</a></li>
+            <li><a href="#about" class="hover:text-white transition-colors">{t['nav.about']}</a></li>
+          </ul>
+          
+          <a 
+            href={lang === 'fr' ? '/en' : '/fr'} 
+            class="text-xs font-bold border border-slate-700 px-2 py-1 rounded hover:bg-slate-800 transition-all"
+          >
+            {lang === 'fr' ? 'EN' : 'FR'}
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <slot />
+
+    <footer class="border-t border-slate-900 mt-20 py-10 bg-slate-950">
+      <div class="max-w-5xl mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-slate-500 text-sm">
+          © 2026 — {t['footer.madeWith']}
+        </p>
+        <div class="flex gap-6">
+            <a href="#" class="text-slate-400 hover:text-white text-sm">LinkedIn</a>
+            <a href="#" class="text-slate-400 hover:text-white text-sm">GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

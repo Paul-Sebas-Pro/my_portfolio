@@ -1,8 +1,11 @@
 ---
-import "../../styles/global.css";
+import MainLayout from "../../layouts/MainLayout.astro";
 import ProjectCard from "../../components/ProjectCard.astro";
+import { ui } from "../../i18n/ui";
 
-// On simule une petite DB de projets
+const lang = 'fr';
+const t = ui[lang];
+
 const myProjects = [
   {
     title: "MyQuiz",
@@ -21,23 +24,18 @@ const myProjects = [
 ];
 ---
 
-<html lang="fr">
-	<body class="bg-slate-950 text-slate-50">
-		<main class="max-w-5xl mx-auto px-6 py-24">
-			
-      <section id="projets">
-        <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
-          <span class="h-px w-12 bg-blue-500"></span>
-          Projets Sélectionnés
-        </h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {myProjects.map((project) => (
-            <ProjectCard {...project} />
-          ))}
-        </div>
-      </section>
+<MainLayout title="Accueil" lang={lang}>
+  <main class="max-w-5xl mx-auto px-6 pt-32">
+    <section class="mb-20">
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+        {t['hero.title']}
+      </h1>
+      <p class="text-xl text-slate-400 max-w-2xl leading-relaxed">
+        {t['hero.desc']}
+      </p>
+    </section>
 
-		</main>
-	</body>
-</html>
+    <section id="projets">
+        </section>
+  </main>
+</MainLayout>
