@@ -1,41 +1,48 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import ProjectCard from "../../components/ProjectCard.astro";
+import SkillCategory from "../../components/SkillCategory.astro";
 import { ui } from "../../i18n/ui";
 
 const lang = 'fr';
 const t = ui[lang];
 
-const myProjects = [
-  {
-    title: "MyQuiz",
-    description: "Plateforme SaaS de quiz avec pipeline CI/CD, tests automatisés et déploiement Docker.",
-    stack: ["Node.js", "PostgreSQL", "Docker", "GitHub Actions"],
-    githubUrl: "#",
-    category: "Full-Stack & DevOps"
-  },
-  {
-    title: "MyChat",
-    description: "Interface conversationnelle intelligente exploitant l'API de Mistral AI pour l'assistance métier.",
-    stack: ["Svelte", "Node.js", "Mistral AI API"],
-    githubUrl: "#",
-    category: "IA / Innovation"
-  }
-];
 ---
 
-<MainLayout title="Accueil" lang={lang}>
-  <main class="max-w-5xl mx-auto px-6 pt-32">
-    <section class="mb-20">
-      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-        {t['hero.title']}
-      </h1>
-      <p class="text-xl text-slate-400 max-w-2xl leading-relaxed">
-        {t['hero.desc']}
-      </p>
+<MainLayout title="Expertise" lang={lang}>
+  <main class="max-w-5xl mx-auto px-6 py-24">
+    
+    <section id="skills" class="mt-32">
+      <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
+        <span class="h-px w-12 bg-blue-500"></span>
+        {t['skills.title']}
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <SkillCategory 
+          title={t['skills.frontend']} 
+          iconColor="bg-blue-500"
+          skills={["React", "Svelte", "Astro", "Vue", "Tailwind CSS", "TypeScript"]}
+        />
+        
+        <SkillCategory 
+          title={t['skills.backend']} 
+          iconColor="bg-emerald-500"
+          skills={["Node.js", "Express", "PostgreSQL", "Sequelize", "Prisma", "REST API"]}
+        />
+
+        <SkillCategory 
+          title={t['skills.devops']} 
+          iconColor="bg-orange-500"
+          skills={["Docker", "Docker Compose", "GitHub Actions", "Linux", "CI/CD"]}
+        />
+
+        <SkillCategory 
+          title={t['skills.saas']} 
+          iconColor="bg-purple-500"
+          skills={["Modélisation DB", "Authentification JWT", "Architecture MVC", "Tests Unitaires"]}
+        />
+      </div>
     </section>
 
-    <section id="projets">
-        </section>
   </main>
 </MainLayout>
