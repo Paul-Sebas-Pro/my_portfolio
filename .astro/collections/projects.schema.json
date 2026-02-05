@@ -7,7 +7,7 @@
         "title": {
           "type": "string"
         },
-        "description": {
+        "subtitle": {
           "type": "string"
         },
         "stack": {
@@ -16,15 +16,18 @@
             "type": "string"
           }
         },
-        "github": {
-          "type": "string",
-          "format": "uri"
-        },
         "category": {
           "type": "string"
         },
-        "image": {
-          "type": "string"
+        "githubUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "devopsFeatures": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "$schema": {
           "type": "string"
@@ -32,10 +35,11 @@
       },
       "required": [
         "title",
-        "description",
+        "subtitle",
         "stack",
-        "github",
-        "category"
+        "category",
+        "githubUrl",
+        "devopsFeatures"
       ],
       "additionalProperties": false
     }
