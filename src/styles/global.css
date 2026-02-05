@@ -1,2 +1,7 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
+theme {
+    --color-prose-body: var(--color-slate-400);
+    --color-prose-headings: var(--color-slate-100);
+}
