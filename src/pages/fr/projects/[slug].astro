@@ -8,7 +8,7 @@ export async function getStaticPaths() {
     id.startsWith("fr/"),
   );
   return projects.map((entry) => ({
-    params: { slug: entry.slug.split("/")[1] },
+    params: { slug: entry.slug.replace("fr/", "") },
     props: { entry },
   }));
 }
