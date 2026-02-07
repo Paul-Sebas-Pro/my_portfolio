@@ -1,17 +1,56 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
 import SkillCategory from "../../components/SkillCategory.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import { getCollection } from "astro:content";
 import { ui } from "../../i18n/ui";
 
 const lang = 'fr';
 const t = ui[lang];
 
+// On récupère automatiquement tous les projets en français
+const projects = await getCollection("projects", ({ id }) => {
+  return id.startsWith('fr/');
+});
+
+// Optionnel : On peut trier les projets si besoin (par date ou titre)
+const sortedProjects = projects.sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
-<MainLayout title="Expertise" lang={lang}>
-  <main class="max-w-5xl mx-auto px-6 py-24">
+<MainLayout title="Développeur Full-Stack" lang={lang}>
+  <main class="max-w-5xl mx-auto px-6 pt-32 pb-24">
     
-    <section id="skills" class="mt-32">
+    <section class="mb-32">
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+        {t['hero.title']}
+      </h1>
+      <p class="text-xl text-slate-400 max-w-2xl leading-relaxed">
+        {t['hero.desc']}
+      </p>
+    </section>
+
+    <section id="projets" class="mt-20">
+  <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
+    <span class="h-px w-12 bg-blue-500"></span>
+    Projets Sélectionnés
+  </h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {sortedProjects.map((project) => (
+      <ProjectCard 
+        title={project.data.title}
+        description={project.data.subtitle}
+        stack={project.data.stack}
+        category={project.data.category}
+        githubUrl={project.data.githubUrl}
+        slug={project.slug.split('/')[1]} 
+        lang={lang}
+      />
+    ))}
+  </div>
+</section>
+
+    <section id="skills">
       <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
         <span class="h-px w-12 bg-blue-500"></span>
         {t['skills.title']}
