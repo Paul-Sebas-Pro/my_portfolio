@@ -5,19 +5,19 @@ import ProjectCard from "../../components/ProjectCard.astro";
 import { getCollection } from "astro:content";
 import { ui } from "../../i18n/ui";
 
-const lang = 'fr';
+const lang = "fr";
 const t = ui[lang];
 
 // On récupère automatiquement tous les projets en français
 const projects = await getCollection("projects", ({ id }) => {
-  return id.startsWith('fr/');
+  return id.startsWith("fr/");
 });
 
 // Optionnel : On peut trier les projets si besoin (par date ou titre)
 const sortedProjects = projects.sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
-<MainLayout title="Développeur Full-Stack" lang={lang}>
+<MainLayout title="Accueil" lang={lang}>
   <main class="max-w-5xl mx-auto px-6 pt-32 pb-24">
     
     <section class="mb-32">

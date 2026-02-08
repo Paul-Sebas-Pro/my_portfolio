@@ -1,0 +1,64 @@
+---
+import MainLayout from "../../../layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+
+// 1. Générer les chemins pour chaque projet
+export async function getStaticPaths() {
+  const projects = await getCollection("projects", ({ id }) =>
+    id.startsWith("en/"),
+  );
+  return projects.map((entry) => ({
+    params: { slug: entry.slug.replace("fr/", "") },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<MainLayout title={entry.data.title} lang="en">
+  <article class="max-w-4xl mx-auto px-6 pt-32 pb-20">
+    <header class="mb-12">
+      <h1 class="text-5xl font-extrabold mb-4">{entry.data.title}</h1>
+      <p class="text-2xl text-blue-400 mb-8">{entry.data.subtitle}</p>
+
+      <div class="flex flex-wrap gap-2 mb-8">
+        {
+          entry.data.stack.map((s) => (
+            <span class="px-3 py-1 bg-slate-800 rounded-full text-sm border border-slate-700">
+              {s}
+            </span>
+          ))
+        }
+      </div>
+
+      <a
+        href={entry.data.githubUrl}
+        class="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-xl font-bold hover:bg-blue-400 transition-colors"
+      >
+        GitHub Repository
+      </a>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
+      {
+        entry.data.devopsFeatures.map((f) => (
+          <div class="p-4 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-300 font-medium text-center">
+            {f}
+          </div>
+        ))
+      }
+    </div>
+
+    <div
+      class="mt-12 prose prose-invert prose-blue max-w-none
+      prose-h3:text-2xl prose-h3:font-bold prose-h3:text-slate-100
+      prose-p:text-slate-400 prose-p:leading-relaxed
+      prose-li:text-slate-400
+      prose-strong:text-blue-400"
+    >
+      <Content />
+    </div>
+  </article>
+</MainLayout>
