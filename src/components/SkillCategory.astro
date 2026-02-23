@@ -14,10 +14,12 @@ const { title, skills, iconColor } = Astro.props;
     <h3 class="text-lg font-semibold text-slate-100">{title}</h3>
   </div>
   <ul class="flex flex-wrap gap-2">
-    {skills.map(skill => (
-      <li class="px-3 py-1 bg-slate-800/50 text-slate-400 text-sm rounded-lg border border-slate-700/50">
-        {skill}
-      </li>
-    ))}
+    {
+      skills.map((skill: string) => (
+        <li class="px-3 py-1 bg-slate-800/50 text-slate-400 text-sm rounded-lg border border-slate-700/50">
+          {skill}
+        </li>
+      ))
+    }
   </ul>
 </div>
