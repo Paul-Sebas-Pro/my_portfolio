@@ -5,17 +5,17 @@ import ProjectCard from "../../components/ProjectCard.astro";
 import { getCollection } from "astro:content";
 import { ui } from "../../i18n/ui";
 
-const lang = "en";
+const lang = "es";
 const t = ui[lang];
 
 const projects = await getCollection("projects", ({ id }) => {
-  return id.startsWith("en/");
+  return id.startsWith("es/");
 });
 
 const sortedProjects = projects.sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
-<MainLayout title="Home" lang={lang}>
+<MainLayout title="Inicio" lang={lang}>
   <main class="max-w-5xl mx-auto px-6 pt-32 pb-24">
 
     <section class="mb-32">
@@ -76,7 +76,7 @@ const sortedProjects = projects.sort((a, b) => a.data.title.localeCompare(b.data
         <SkillCategory
           title={t['skills.saas']}
           iconColor="bg-purple-500"
-          skills={["DB Modeling", "JWT Auth", "MVC Architecture", "Vitest & Supertest"]}
+          skills={["Modelado DB", "Auth JWT", "Arquitectura MVC", "Vitest & Supertest"]}
         />
       </div>
     </section>

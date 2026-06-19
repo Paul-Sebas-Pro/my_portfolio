@@ -1,10 +1,10 @@
 ---
-title: "MyQuiz"
-subtitle: "Architecture SaaS robuste avec CI/CD"
-stack: ["Node.js", "Express", "Prisma", "PostgreSQL", "Docker", "Vitest"]
+title: "MyQuizz"
+subtitle: "Architecture SaaS full-stack robuste avec CI/CD"
+stack: ["Svelte 5", "Node.js", "Express 5", "Prisma 7", "PostgreSQL", "Docker", "Vitest"]
 category: "Full-Stack & DevOps"
-githubUrl: "https://github.com/ton-pseudo/myquiz"
-devopsFeatures: ["Docker / Docker Compose", "Vitest & Supertest", "GitHub Actions"]
+githubUrl: "https://github.com/Paul-Sebas-Pro/MyQuizz"
+devopsFeatures: ["Docker / Docker Compose", "90 Tests Vitest+Supertest", "GitHub Actions CI"]
 ---
 
 ### 🏗️ Architecture Backend

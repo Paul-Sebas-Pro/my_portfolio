@@ -8,18 +8,16 @@ import { ui } from "../../i18n/ui";
 const lang = "fr";
 const t = ui[lang];
 
-// On récupère automatiquement tous les projets en français
 const projects = await getCollection("projects", ({ id }) => {
   return id.startsWith("fr/");
 });
 
-// Optionnel : On peut trier les projets si besoin (par date ou titre)
 const sortedProjects = projects.sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
 <MainLayout title="Accueil" lang={lang}>
   <main class="max-w-5xl mx-auto px-6 pt-32 pb-24">
-    
+
     <section class="mb-32">
       <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
         {t['hero.title']}
@@ -29,57 +27,100 @@ const sortedProjects = projects.sort((a, b) => a.data.title.localeCompare(b.data
       </p>
     </section>
 
-    <section id="projets" class="mt-20">
-  <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
-    <span class="h-px w-12 bg-blue-500"></span>
-    Projets Sélectionnés
-  </h2>
-  
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    {sortedProjects.map((project) => (
-      <ProjectCard 
-        title={project.data.title}
-        description={project.data.subtitle}
-        stack={project.data.stack}
-        category={project.data.category}
-        githubUrl={project.data.githubUrl}
-        slug={project.slug.split('/')[1]} 
-        lang={lang}
-      />
-    ))}
-  </div>
-</section>
+    <section id="projects" class="mt-20">
+      <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
+        <span class="h-px w-12 bg-blue-500"></span>
+        {t['projects.title']}
+      </h2>
 
-    <section id="skills">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {sortedProjects.map((project) => (
+          <ProjectCard
+            title={project.data.title}
+            description={project.data.subtitle}
+            stack={project.data.stack}
+            category={project.data.category}
+            githubUrl={project.data.githubUrl}
+            slug={project.id.split('/')[1].replace('.md', '')}
+            lang={lang}
+          />
+        ))}
+      </div>
+    </section>
+
+    <section id="skills" class="mt-20">
       <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
         <span class="h-px w-12 bg-blue-500"></span>
         {t['skills.title']}
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <SkillCategory 
-          title={t['skills.frontend']} 
+        <SkillCategory
+          title={t['skills.frontend']}
           iconColor="bg-blue-500"
-          skills={["React", "Svelte", "Astro", "Vue", "Tailwind CSS", "TypeScript"]}
-        />
-        
-        <SkillCategory 
-          title={t['skills.backend']} 
-          iconColor="bg-emerald-500"
-          skills={["Node.js", "Express", "PostgreSQL", "Sequelize", "Prisma", "REST API"]}
+          skills={["React 19", "Svelte 5", "Vue 3.5", "Astro 5", "Tailwind CSS v4", "TypeScript"]}
         />
 
-        <SkillCategory 
-          title={t['skills.devops']} 
+        <SkillCategory
+          title={t['skills.backend']}
+          iconColor="bg-emerald-500"
+          skills={["Node.js", "Express 5", "PostgreSQL", "Sequelize", "Prisma 7", "REST API"]}
+        />
+
+        <SkillCategory
+          title={t['skills.devops']}
           iconColor="bg-orange-500"
           skills={["Docker", "Docker Compose", "GitHub Actions", "Linux", "CI/CD"]}
         />
 
-        <SkillCategory 
-          title={t['skills.saas']} 
+        <SkillCategory
+          title={t['skills.saas']}
           iconColor="bg-purple-500"
-          skills={["Modélisation DB", "Authentification JWT", "Architecture MVC", "Tests Unitaires"]}
+          skills={["Modélisation DB", "Auth JWT", "Architecture MVC", "Vitest & Supertest"]}
         />
+      </div>
+    </section>
+
+    <section id="about" class="mt-20">
+      <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
+        <span class="h-px w-12 bg-blue-500"></span>
+        {t['about.title']}
+      </h2>
+      <div class="max-w-3xl">
+        <p class="text-lg text-slate-400 leading-relaxed">
+          {t['about.text']}
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="mt-20">
+      <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
+        <span class="h-px w-12 bg-blue-500"></span>
+        {t['contact.title']}
+      </h2>
+      <div class="max-w-3xl">
+        <p class="text-lg text-slate-400 mb-8">
+          {t['contact.desc']}
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="mailto:papou138@gmail.com"
+            class="inline-flex items-center gap-2 bg-blue-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-600 transition-colors"
+          >
+            {t['contact.email']} — papou138@gmail.com
+          </a>
+          <a
+            href="https://github.com/Paul-Sebas-Pro"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 border border-slate-700 px-6 py-3 rounded-xl font-bold hover:bg-slate-800 transition-colors"
+          >
+            {t['contact.github']} — Paul-Sebas-Pro
+          </a>
+          <span class="inline-flex items-center gap-2 border border-slate-700 px-6 py-3 rounded-xl font-bold text-slate-500 cursor-not-allowed">
+            {t['contact.malt']}
+          </span>
+        </div>
       </div>
     </section>
 

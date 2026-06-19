@@ -4,10 +4,10 @@ import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects", ({ id }) =>
-    id.startsWith("en/"),
+    id.startsWith("es/"),
   );
   return projects.map((entry) => ({
-    params: { slug: entry.id.replace("en/", "").replace(".md", "") },
+    params: { slug: entry.id.replace("es/", "").replace(".md", "") },
     props: { entry },
   }));
 }
@@ -16,7 +16,7 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<MainLayout title={entry.data.title} lang="en">
+<MainLayout title={entry.data.title} lang="es">
   <article class="max-w-4xl mx-auto px-6 pt-32 pb-20">
     <header class="mb-12">
       <h1 class="text-5xl font-extrabold mb-4">{entry.data.title}</h1>
@@ -38,7 +38,7 @@ const { Content } = await render(entry);
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-xl font-bold hover:bg-blue-400 transition-colors"
       >
-        GitHub Repository
+        Repositorio GitHub
       </a>
     </header>
 

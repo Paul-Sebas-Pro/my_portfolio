@@ -1,43 +1,40 @@
 ---
 title: "MyChat"
-subtitle: "A REMPLIR"
-stack: ["Node.js", "Express", "Prisma", "PostgreSQL", "Docker", "Vitest"]
-category: "A REMPLIR"
-githubUrl: "https://github.com/ton-pseudo/myquiz"
-devopsFeatures: ["Docker / Docker Compose", "Vitest & Supertest", "GitHub Actions"]
+subtitle: "Application de chat temps réel avec rendu Markdown"
+stack: ["Svelte 5", "Vite", "PocketBase", "TypeScript"]
+category: "Frontend & Temps réel"
+githubUrl: "https://github.com/Paul-Sebas-Pro/MyChat"
+devopsFeatures: ["PocketBase Backend", "Temps réel natif", "Svelte 5 Runes"]
 ---
-<!-- TODO: Add content for the MyChat project in French -->
-### 🏗️ Architecture Backend
 
-Le backend est construit avec **Node.js** et **Express**, structuré selon une architecture en couches pour séparer la logique métier des accès aux données.
+### ⚡ Frontend Svelte 5
 
-L'utilisation de **Prisma ORM** est centrale :
+L'interface est construite avec **Svelte 5** et son nouveau système de réactivité par **Runes** (`$state`, `$derived`, `$effect`), offrant des performances maximales avec un bundle minimal.
 
-- **Type-safety** : Utilisation du client généré pour éviter les erreurs de requêtes.
-- **Migrations** : Gestion rigoureuse du schéma PostgreSQL.
-- **Relations** : Gestion complexe des Quiz, Questions et Réponses.
+- **Runes Svelte 5** : réactivité fine-grained, sans les compromis des stores classiques
+- **Rendu Markdown** : les messages supportent la syntaxe Markdown complète via `svelte-exmarkdown` et `github-markdown-css`
+- UI fluide avec transitions natives Svelte
 
-### ♾️ Le Pilier DevOps & Qualité
+### 🗄️ Backend PocketBase
 
-C'est le cœur de la fiabilité du projet. Aucun code n'est déployé sans passer par notre suite de validation.
+**PocketBase** sert de backend complet — base de données, authentification et temps réel en un seul binaire Go auto-hébergeable.
 
-#### 🐳 Isolation avec Docker
+- **Authentification** : inscription et connexion natives PocketBase
+- **Collections** : messages structurés avec relations utilisateurs
+- **Subscriptions temps réel** : les nouveaux messages arrivent en push sans polling
 
-L'application et sa base de données sont isolées. Cela permet de garantir que le bug "mais ça marche sur ma machine" n'existe plus.
+### 🔄 Architecture Temps réel
 
-#### 🧪 Stratégie de Tests
+```
+Client Svelte 5
+    │
+    ├── PocketBase SDK (subscribe)
+    │       └── SSE / WebSocket natif
+    │
+    └── PocketBase Server
+            ├── Auth (email/password)
+            ├── Collections (messages)
+            └── Realtime events
+```
 
-J'ai implémenté une double couche de tests :
-
-1. **Tests Unitaires (Vitest)** : Validation des calculs de scores et des règles métier.
-2. **Tests d'Intégration (Supertest)** : On simule des appels API réels sur une base de données de test pour valider les flux (ex: "Un utilisateur peut-il répondre deux fois au même quiz ?").
-
-#### 🚀 Pipeline CI/CD (GitHub Actions)
-
-À chaque Pull Request, un workflow automatique :
-
-- Monte un service **PostgreSQL** éphémère.
-- Exécute les migrations Prisma.
-- Lance la suite complète de tests.
-- Build l'image Docker pour valider la compilation.
-- Analyse de sécurité des dépendances.
+Chaque message envoyé déclenche une subscription PocketBase qui pousse instantanément la mise à jour à tous les clients connectés, sans besoin de WebSocket custom.

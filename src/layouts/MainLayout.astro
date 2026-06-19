@@ -4,11 +4,18 @@ import { ui } from "../i18n/ui";
 
 interface Props {
   title: string;
-  lang: 'fr' | 'en';
+  lang: 'fr' | 'en' | 'es';
+  description?: string;
 }
 
-const { title, lang } = Astro.props;
-const t = ui[lang];
+const { title, lang, description } = Astro.props;
+const t = ui[lang as keyof typeof ui];
+
+const metaDescription = description ?? (
+  lang === 'fr' ? "Portfolio de Paul Sebas — Développeur Full-Stack avec 20 ans d'expertise IT. React, Svelte, Vue, Node.js, Docker." :
+  lang === 'en' ? "Paul Sebas portfolio — Full-Stack Developer with 20 years of IT expertise. React, Svelte, Vue, Node.js, Docker." :
+  "Portfolio de Paul Sebas — Desarrollador Full-Stack con 20 años de experiencia IT. React, Svelte, Vue, Node.js, Docker."
+);
 ---
 
 <html lang={lang} class="scroll-smooth">
@@ -17,29 +24,42 @@ const t = ui[lang];
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} | Portfolio</title>
-    <meta name="description" content="Portfolio de développeur Full-Stack expert en solutions SaaS et DevOps" />
+    <title>{title} | Paul Sebas — Dev Full-Stack</title>
+    <meta name="description" content={metaDescription} />
+    <meta property="og:title" content={`${title} | Paul Sebas — Dev Full-Stack`} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : lang === 'en' ? 'en_US' : 'es_ES'} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={`${title} | Paul Sebas`} />
+    <meta name="twitter:description" content={metaDescription} />
   </head>
   <body class="bg-slate-950 text-slate-50 antialiased selection:bg-blue-500/30">
-    
+
     <nav class="fixed top-0 w-full z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur-md">
       <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href={`/${lang}`} class="font-bold text-xl tracking-tighter hover:text-blue-400 transition-colors">
-          NOM<span class="text-blue-500">.</span>PRENOM
+          Paul<span class="text-blue-500">.</span>Sebas
         </a>
-        
+
         <div class="flex items-center gap-8">
           <ul class="hidden md:flex gap-6 text-sm font-medium text-slate-400">
-            <li><a href="#projets" class="hover:text-white transition-colors">{t['nav.projects']}</a></li>
+            <li><a href="#projects" class="hover:text-white transition-colors">{t['nav.projects']}</a></li>
             <li><a href="#about" class="hover:text-white transition-colors">{t['nav.about']}</a></li>
+            <li><a href="#contact" class="hover:text-white transition-colors">{t['nav.contact']}</a></li>
           </ul>
-          
-          <a 
-            href={lang === 'fr' ? '/en/' : '/fr/'} 
-            class="text-xs font-bold border border-slate-700 px-2 py-1 rounded hover:bg-slate-800 transition-all"
-          >
-            {lang === 'fr' ? 'EN' : 'FR'}
-          </a>
+
+          <div class="flex gap-2">
+            {lang !== 'fr' && (
+              <a href="/fr/" class="text-xs font-bold border border-slate-700 px-2 py-1 rounded hover:bg-slate-800 transition-all">FR</a>
+            )}
+            {lang !== 'en' && (
+              <a href="/en/" class="text-xs font-bold border border-slate-700 px-2 py-1 rounded hover:bg-slate-800 transition-all">EN</a>
+            )}
+            {lang !== 'es' && (
+              <a href="/es/" class="text-xs font-bold border border-slate-700 px-2 py-1 rounded hover:bg-slate-800 transition-all">ES</a>
+            )}
+          </div>
         </div>
       </div>
     </nav>
@@ -52,8 +72,8 @@ const t = ui[lang];
           © 2026 — {t['footer.madeWith']}
         </p>
         <div class="flex gap-6">
-            <a href="#" class="text-slate-400 hover:text-white text-sm">LinkedIn</a>
-            <a href="#" class="text-slate-400 hover:text-white text-sm">GitHub</a>
+            <a href="https://www.linkedin.com/in/paul-sebas" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white text-sm">LinkedIn</a>
+            <a href="https://github.com/Paul-Sebas-Pro" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white text-sm">GitHub</a>
         </div>
       </div>
     </footer>

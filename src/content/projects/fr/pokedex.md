@@ -1,43 +1,40 @@
 ---
 title: "MyPokédex"
-subtitle: "A REMPLIR"
-stack: ["Node.js", "Express", "Prisma", "PostgreSQL", "Docker", "Vitest"]
-category: "A REMPLIR"
-githubUrl: "https://github.com/ton-pseudo/myquiz"
-devopsFeatures: ["Docker / Docker Compose", "Vitest & Supertest", "GitHub Actions"]
+subtitle: "Application full-stack de consultation Pokémon"
+stack: ["Vue 3.5", "Node.js", "Express 5", "Sequelize", "PostgreSQL", "Tailwind v4", "shadcn-vue"]
+category: "Full-Stack"
+githubUrl: "https://github.com/Paul-Sebas-Pro/MyPokedex"
+devopsFeatures: ["GitHub Actions CI", "Sequelize Migrations", "npm audit sécurité"]
 ---
-<!-- TODO: Add content for the MyChat project in French -->
-### 🏗️ Architecture Backend
 
-Le backend est construit avec **Node.js** et **Express**, structuré selon une architecture en couches pour séparer la logique métier des accès aux données.
+### 🎨 Frontend Vue 3.5
 
-L'utilisation de **Prisma ORM** est centrale :
+L'interface est construite avec **Vue 3.5** et la **Composition API**, en tirant parti des dernières améliorations de réactivité du framework.
 
-- **Type-safety** : Utilisation du client généré pour éviter les erreurs de requêtes.
-- **Migrations** : Gestion rigoureuse du schéma PostgreSQL.
-- **Relations** : Gestion complexe des Quiz, Questions et Réponses.
+Le système de design repose sur **shadcn-vue 2.7** et **Tailwind CSS v4**, offrant des composants accessibles et un styling moderne avec la configuration CSS-first de Tailwind v4.
 
-### ♾️ Le Pilier DevOps & Qualité
+- **Composants headless** via shadcn-vue pour l'accessibilité
+- **Tailwind v4** avec Vite plugin (configuration `@import "tailwindcss"`)
+- Affichage des cartes Pokémon avec sprites, stats et types
 
-C'est le cœur de la fiabilité du projet. Aucun code n'est déployé sans passer par notre suite de validation.
+### 🏗️ Backend Express 5
 
-#### 🐳 Isolation avec Docker
+Le backend est une API REST construite avec **Express 5** et **Sequelize ORM**, qui consomme les données de la **PokéAPI** pour les stocker localement.
 
-L'application et sa base de données sont isolées. Cela permet de garantir que le bug "mais ça marche sur ma machine" n'existe plus.
+- **Sequelize** : modèles typés, migrations rigoureuses, associations
+- **PostgreSQL** : stockage persistant des données Pokémon seedées
+- Architecture MVC claire séparant routes, contrôleurs et modèles
 
-#### 🧪 Stratégie de Tests
+### ♾️ CI & Qualité
 
-J'ai implémenté une double couche de tests :
+#### 🔗 Intégration Continue (GitHub Actions)
 
-1. **Tests Unitaires (Vitest)** : Validation des calculs de scores et des règles métier.
-2. **Tests d'Intégration (Supertest)** : On simule des appels API réels sur une base de données de test pour valider les flux (ex: "Un utilisateur peut-il répondre deux fois au même quiz ?").
+Le pipeline CI vérifie à chaque push :
 
-#### 🚀 Pipeline CI/CD (GitHub Actions)
+- Installation des dépendances sur **l'environnement cible** (x64 Linux)
+- Audit de sécurité des dépendances via `npm audit`
+- Validation du build
 
-À chaque Pull Request, un workflow automatique :
+#### 🔀 Défi ARM64 → x64
 
-- Monte un service **PostgreSQL** éphémère.
-- Exécute les migrations Prisma.
-- Lance la suite complète de tests.
-- Build l'image Docker pour valider la compilation.
-- Analyse de sécurité des dépendances.
+Un problème de compatibilité binaire entre ma machine de développement (ARM64) et les runners GitHub Actions (x64) a été identifié et résolu en configurant correctement les environnements de build pour chaque architecture.
