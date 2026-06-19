@@ -1,0 +1,16 @@
+---
+interface Props {
+  items: { label: string; icon: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="flex flex-wrap gap-4">
+  {items.map((item) => (
+    <div class="flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-500/30 bg-emerald-500/5 text-emerald-400 text-sm font-medium">
+      <span>{item.icon}</span>
+      <span>{item.label}</span>
+    </div>
+  ))}
+</div>

@@ -1,7 +1,8 @@
 @import "tailwindcss";
+@import "./tokens.css";
 @plugin "@tailwindcss/typography";
 
-theme {
-    --color-prose-body: var(--color-slate-400);
-    --color-prose-headings: var(--color-slate-100);
+@theme {
+  --color-prose-body: var(--color-slate-400);
+  --color-prose-headings: var(--color-slate-100);
 }

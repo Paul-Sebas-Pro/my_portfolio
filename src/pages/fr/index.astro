@@ -2,6 +2,9 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import SkillCategory from "../../components/SkillCategory.astro";
 import ProjectCard from "../../components/ProjectCard.astro";
+import ServiceCard from "../../components/ServiceCard.astro";
+import WhyCard from "../../components/WhyCard.astro";
+import TrustIndicators from "../../components/TrustIndicators.astro";
 import { getCollection } from "astro:content";
 import { ui } from "../../i18n/ui";
 
@@ -13,26 +16,77 @@ const projects = await getCollection("projects", ({ id }) => {
 });
 
 const sortedProjects = projects.sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const services = [
+  { icon: "🌐", title: t["services.web.title"], description: t["services.web.desc"] },
+  { icon: "🔧", title: t["services.maintenance.title"], description: t["services.maintenance.desc"] },
+  { icon: "⚡", title: t["services.automation.title"], description: t["services.automation.desc"] },
+  { icon: "🔗", title: t["services.integration.title"], description: t["services.integration.desc"] },
+];
+
+const whyItems = [
+  { icon: "🧠", title: t["why.expertise.title"], description: t["why.expertise.desc"], accentColor: "bg-blue-500/10 text-blue-400" },
+  { icon: "⚡", title: t["why.speed.title"], description: t["why.speed.desc"], accentColor: "bg-cyan-500/10 text-cyan-400" },
+  { icon: "🏗️", title: t["why.durability.title"], description: t["why.durability.desc"], accentColor: "bg-emerald-500/10 text-emerald-400" },
+];
+
+const trustItems = [
+  { icon: "✅", label: t["trust.response"] },
+  { icon: "📦", label: t["trust.projects"] },
+  { icon: "🔄", label: t["trust.available"] },
+];
 ---
 
 <MainLayout title="Accueil" lang={lang}>
   <main class="max-w-5xl mx-auto px-6 pt-32 pb-24">
 
-    <section class="mb-32">
-      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-        {t['hero.title']}
+    <!-- Hero -->
+    <section class="mb-24">
+      <div class="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 border border-cyan-500/30 bg-cyan-500/5 px-3 py-1 rounded-full mb-8">
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+        Disponible pour nouvelles missions
+      </div>
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight" style="font-family: var(--font-heading)">
+        {t["hero.title"]}
       </h1>
-      <p class="text-xl text-slate-400 max-w-2xl leading-relaxed">
-        {t['hero.desc']}
+      <p class="text-lg text-slate-400 max-w-2xl leading-relaxed mb-10">
+        {t["hero.subtitle"]}
       </p>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-7 py-3.5 rounded-xl font-bold transition-colors text-sm"
+        >
+          {t["hero.cta.contact"]} →
+        </a>
+        <a
+          href="#services"
+          class="inline-flex items-center gap-2 border border-slate-700 hover:border-slate-500 px-7 py-3.5 rounded-xl font-bold transition-colors text-sm text-slate-300"
+        >
+          {t["hero.cta.services"]}
+        </a>
+      </div>
     </section>
 
-    <section id="projects" class="mt-20">
-      <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
+    <!-- Services -->
+    <section id="services" class="mb-24">
+      <h2 class="text-3xl font-bold mb-12 flex items-center gap-4" style="font-family: var(--font-heading)">
         <span class="h-px w-12 bg-blue-500"></span>
-        {t['projects.title']}
+        {t["services.title"]}
       </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {services.map((s) => (
+          <ServiceCard title={s.title} description={s.description} icon={s.icon} />
+        ))}
+      </div>
+    </section>
 
+    <!-- Projets -->
+    <section id="projects" class="mb-24">
+      <h2 class="text-3xl font-bold mb-12 flex items-center gap-4" style="font-family: var(--font-heading)">
+        <span class="h-px w-12 bg-blue-500"></span>
+        {t["projects.title"]}
+      </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {sortedProjects.map((project) => (
           <ProjectCard
@@ -41,86 +95,84 @@ const sortedProjects = projects.sort((a, b) => a.data.title.localeCompare(b.data
             stack={project.data.stack}
             category={project.data.category}
             githubUrl={project.data.githubUrl}
-            slug={project.id.split('/')[1].replace('.md', '')}
+            slug={project.id.split("/")[1].replace(".md", "")}
             lang={lang}
           />
         ))}
       </div>
     </section>
 
-    <section id="skills" class="mt-20">
-      <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
+    <!-- Pourquoi moi -->
+    <section id="about" class="mb-24">
+      <h2 class="text-3xl font-bold mb-12 flex items-center gap-4" style="font-family: var(--font-heading)">
         <span class="h-px w-12 bg-blue-500"></span>
-        {t['skills.title']}
+        {t["why.title"]}
       </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {whyItems.map((w) => (
+          <WhyCard title={w.title} description={w.description} icon={w.icon} accentColor={w.accentColor} />
+        ))}
+      </div>
+    </section>
 
+    <!-- Expertise technique -->
+    <section id="skills" class="mb-24">
+      <h2 class="text-3xl font-bold mb-12 flex items-center gap-4" style="font-family: var(--font-heading)">
+        <span class="h-px w-12 bg-blue-500"></span>
+        {t["skills.title"]}
+      </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <SkillCategory
-          title={t['skills.frontend']}
+          title={t["skills.frontend"]}
           iconColor="bg-blue-500"
-          skills={["React 19", "Next.js", "Svelte 5", "Vue 3.5", "Astro 5", "Tailwind CSS v4", "TypeScript"]}
+          skills={["React 19", "Next.js", "Svelte 5", "Vue 3.5", "Astro 6", "Tailwind CSS v4", "TypeScript"]}
         />
-
         <SkillCategory
-          title={t['skills.backend']}
+          title={t["skills.backend"]}
           iconColor="bg-emerald-500"
           skills={["Node.js", "Express 5", "PostgreSQL", "MongoDB", "Sequelize", "Prisma 7", "REST API"]}
         />
-
         <SkillCategory
-          title={t['skills.devops']}
+          title={t["skills.devops"]}
           iconColor="bg-orange-500"
           skills={["Docker", "Docker Compose", "GitHub Actions", "Linux", "CI/CD"]}
         />
-
         <SkillCategory
-          title={t['skills.saas']}
+          title={t["skills.saas"]}
           iconColor="bg-purple-500"
           skills={["Modélisation DB", "Auth JWT", "Architecture MVC", "Vitest & Supertest"]}
         />
       </div>
     </section>
 
-    <section id="about" class="mt-20">
-      <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
+    <!-- Contact -->
+    <section id="contact" class="mb-8">
+      <h2 class="text-3xl font-bold mb-4 flex items-center gap-4" style="font-family: var(--font-heading)">
         <span class="h-px w-12 bg-blue-500"></span>
-        {t['about.title']}
+        {t["contact.title"]}
       </h2>
-      <div class="max-w-3xl">
-        <p class="text-lg text-slate-400 leading-relaxed">
-          {t['about.text']}
-        </p>
-      </div>
-    </section>
-
-    <section id="contact" class="mt-20">
-      <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">
-        <span class="h-px w-12 bg-blue-500"></span>
-        {t['contact.title']}
-      </h2>
-      <div class="max-w-3xl">
-        <p class="text-lg text-slate-400 mb-8">
-          {t['contact.desc']}
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a
-            href="mailto:papou138@gmail.com"
-            class="inline-flex items-center gap-2 bg-blue-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-600 transition-colors"
-          >
-            {t['contact.email']} — papou138@gmail.com
-          </a>
-          <a
-            href="https://github.com/Paul-Sebas-Pro"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 border border-slate-700 px-6 py-3 rounded-xl font-bold hover:bg-slate-800 transition-colors"
-          >
-            {t['contact.github']} — Paul-Sebas-Pro
-          </a>
-          <span class="inline-flex items-center gap-2 border border-slate-700 px-6 py-3 rounded-xl font-bold text-slate-500 cursor-not-allowed">
-            {t['contact.malt']}
-          </span>
-        </div>
+      <TrustIndicators items={trustItems} />
+      <p class="text-lg text-slate-400 my-8 max-w-2xl leading-relaxed">
+        {t["contact.desc"]}
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="mailto:papou138@gmail.com"
+          class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold transition-colors text-sm"
+        >
+          {t["contact.email"]} — papou138@gmail.com
+        </a>
+        <a
+          href="https://github.com/Paul-Sebas-Pro"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 border border-slate-700 hover:border-slate-500 px-6 py-3 rounded-xl font-bold transition-colors text-sm text-slate-300"
+        >
+          {t["contact.github"]} — Paul-Sebas-Pro
+        </a>
+        <span class="inline-flex items-center gap-2 border border-slate-800 px-6 py-3 rounded-xl font-bold text-slate-600 cursor-not-allowed text-sm">
+          {t["contact.malt"]}
+        </span>
       </div>
     </section>
 
