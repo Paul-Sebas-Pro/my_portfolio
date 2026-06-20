@@ -3,15 +3,2710 @@
   "children": [
     {
       "type": "frame",
-      "id": "bi8Au",
+      "id": "Go7lh",
       "x": 0,
       "y": 0,
-      "name": "Frame",
+      "name": "Homepage — Desktop",
       "clip": true,
-      "width": 800,
-      "height": 600,
-      "fill": "#FFFFFF",
-      "layout": "none"
+      "width": 1440,
+      "fill": "$bg-base",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "pENlg",
+          "name": "Nav",
+          "width": "fill_container",
+          "height": 64,
+          "fill": "#0B1220CC",
+          "padding": [
+            0,
+            64
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "g2qUHx",
+              "name": "Logo",
+              "fill": "$text-primary",
+              "content": "Paul.Sebas",
+              "fontFamily": "$font-heading",
+              "fontSize": 18,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "VZKQH",
+              "name": "NavLinks",
+              "gap": 40,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ucyhs",
+                  "name": "Services",
+                  "fill": "$text-secondary",
+                  "content": "Services",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "NaCAm",
+                  "name": "Projets",
+                  "fill": "$text-secondary",
+                  "content": "Projets",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "bYV7T",
+                  "name": "À propos",
+                  "fill": "$text-secondary",
+                  "content": "À propos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "T2nIAf",
+                  "name": "Contact",
+                  "fill": "$text-secondary",
+                  "content": "Contact",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "uq3AD",
+              "name": "LangSwitch",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "r65Duf",
+                  "name": "Lang-FR",
+                  "fill": "$primary",
+                  "cornerRadius": 6,
+                  "padding": [
+                    4,
+                    8
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ERzju",
+                      "name": "LangLabel",
+                      "fill": "$text-primary",
+                      "content": "FR",
+                      "fontFamily": "$font-body",
+                      "fontSize": 11,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "HJuMM",
+                  "name": "Lang-EN",
+                  "fill": "#00000000",
+                  "cornerRadius": 6,
+                  "padding": [
+                    4,
+                    8
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ehnb8",
+                      "name": "LangLabel",
+                      "fill": "$text-muted",
+                      "content": "EN",
+                      "fontFamily": "$font-body",
+                      "fontSize": 11,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "v0X7S",
+                  "name": "Lang-ES",
+                  "fill": "#00000000",
+                  "cornerRadius": 6,
+                  "padding": [
+                    4,
+                    8
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "JS29E",
+                      "name": "LangLabel",
+                      "fill": "$text-muted",
+                      "content": "ES",
+                      "fontFamily": "$font-body",
+                      "fontSize": 11,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "kaV4O",
+          "name": "Hero",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 28,
+          "padding": [
+            80,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "NGb80",
+              "name": "Badge",
+              "fill": "#0EA5E915",
+              "cornerRadius": 20,
+              "stroke": "#0EA5E940",
+              "strokeWidth": 1,
+              "gap": 8,
+              "padding": [
+                6,
+                14
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "A75NoT",
+                  "name": "Dot",
+                  "fill": "$secondary",
+                  "width": 6,
+                  "height": 6
+                },
+                {
+                  "type": "text",
+                  "id": "xeMuB",
+                  "name": "BadgeText",
+                  "fill": "$secondary",
+                  "content": "Disponible pour nouvelles missions",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "ADICK",
+              "name": "H1",
+              "fill": "$text-primary",
+              "textGrowth": "fixed-width",
+              "width": 780,
+              "content": "J'aide les PME et acteurs locaux\nà construire des outils web fiables\net performants",
+              "lineHeight": 1.15,
+              "fontFamily": "$font-heading",
+              "fontSize": 52,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "xG7pV",
+              "name": "Subtitle",
+              "fill": "$text-secondary",
+              "textGrowth": "fixed-width",
+              "width": 600,
+              "content": "Développeur Full-Stack avec 20 ans d'expertise IT — De la conception à la mise en production.",
+              "lineHeight": 1.6,
+              "fontFamily": "$font-body",
+              "fontSize": 18,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "N1UTk",
+              "name": "CTAs",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "JgQxb",
+                  "name": "CTA-Primary",
+                  "fill": "$primary",
+                  "cornerRadius": 12,
+                  "gap": 8,
+                  "padding": [
+                    14,
+                    28
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Lh7Jr",
+                      "name": "CTAPrimaryLabel",
+                      "fill": "$text-primary",
+                      "content": "Discuter de votre projet →",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "va6bV",
+                  "name": "CTA-Secondary",
+                  "fill": "#00000000",
+                  "cornerRadius": 12,
+                  "stroke": "$border-subtle",
+                  "strokeWidth": 1,
+                  "padding": [
+                    14,
+                    28
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "I3CRC",
+                      "name": "CTASecondaryLabel",
+                      "fill": "$text-secondary",
+                      "content": "Voir mes services",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ZbvyY",
+          "name": "Services",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 36,
+          "padding": [
+            60,
+            120
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "edzO2",
+              "name": "ServicesTitle",
+              "fill": "$text-primary",
+              "content": "Ce que je fais",
+              "fontFamily": "$font-heading",
+              "fontSize": 32,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "uJfxh",
+              "name": "ServicesGrid",
+              "width": "fill_container",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "O07w7G",
+                  "name": "Card-Création de sites web",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": "$radius-lg",
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "yIDAV",
+                      "name": "CardIcon",
+                      "fill": "$text-primary",
+                      "content": "🌐",
+                      "fontFamily": "$font-body",
+                      "fontSize": 28,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "bxrfG",
+                      "name": "CardTitle",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Création de sites web",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "SHcfn",
+                      "name": "CardDesc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Sites vitrines, portfolios, landing pages — livrés en production, pas en maquette.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fD8x1",
+                  "name": "Card-Maintenance & évolution",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": "$radius-lg",
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "KtUQf",
+                      "name": "CardIcon",
+                      "fill": "$text-primary",
+                      "content": "🔧",
+                      "fontFamily": "$font-body",
+                      "fontSize": 28,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "YKIco",
+                      "name": "CardTitle",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Maintenance & évolution",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "NkOFs",
+                      "name": "CardDesc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Corrections de bugs, mises à jour, nouvelles fonctionnalités. Contrats récurrents disponibles.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Y2mvy0",
+                  "name": "Card-Automatisation métier",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": "$radius-lg",
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "s7QB4",
+                      "name": "CardIcon",
+                      "fill": "$text-primary",
+                      "content": "⚡",
+                      "fontFamily": "$font-body",
+                      "fontSize": 28,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "TkNjR",
+                      "name": "CardTitle",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Automatisation métier",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "N0gycy",
+                      "name": "CardDesc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Formulaires, exports, notifications — gagnez du temps sur les tâches répétitives.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "h3lPmB",
+                  "name": "Card-Intégrations & outils",
+                  "width": "fill_container",
+                  "fill": "$surface",
+                  "cornerRadius": "$radius-lg",
+                  "stroke": "$border",
+                  "strokeWidth": 1,
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "waWqk",
+                      "name": "CardIcon",
+                      "fill": "$text-primary",
+                      "content": "🔗",
+                      "fontFamily": "$font-body",
+                      "fontSize": 28,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "DxXof",
+                      "name": "CardTitle",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Intégrations & outils",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "g7UZBr",
+                      "name": "CardDesc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "CRM, paiement en ligne, APIs tierces — connectez vos outils entre eux.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "yVJYq",
+          "name": "TrustRow",
+          "width": "fill_container",
+          "fill": "$surface",
+          "gap": 20,
+          "padding": [
+            32,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "whFH2",
+              "name": "Trust-Réponse sous 24h",
+              "fill": "#10B98115",
+              "cornerRadius": 20,
+              "stroke": "#10B98130",
+              "strokeWidth": 1,
+              "gap": 8,
+              "padding": [
+                8,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "zFhUd",
+                  "name": "TrustIcon",
+                  "fill": "$text-primary",
+                  "content": "✅",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "AGKcJ",
+                  "name": "TrustLabel",
+                  "fill": "$accent",
+                  "content": "Réponse sous 24h",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "FSqHy",
+              "name": "Trust-4 projets livrés",
+              "fill": "#10B98115",
+              "cornerRadius": 20,
+              "stroke": "#10B98130",
+              "strokeWidth": 1,
+              "gap": 8,
+              "padding": [
+                8,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "vKepC",
+                  "name": "TrustIcon",
+                  "fill": "$text-primary",
+                  "content": "📦",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "qOWm9",
+                  "name": "TrustLabel",
+                  "fill": "$accent",
+                  "content": "4 projets livrés",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "brHRX",
+              "name": "Trust-Disponible pour retainer",
+              "fill": "#10B98115",
+              "cornerRadius": 20,
+              "stroke": "#10B98130",
+              "strokeWidth": 1,
+              "gap": 8,
+              "padding": [
+                8,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "v0NRo",
+                  "name": "TrustIcon",
+                  "fill": "$text-primary",
+                  "content": "🔄",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "OuYCH",
+                  "name": "TrustLabel",
+                  "fill": "$accent",
+                  "content": "Disponible pour retainer",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "XT1DV",
+          "name": "WhySection",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 36,
+          "padding": [
+            60,
+            120
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "h0Be1C",
+              "name": "WhyTitle",
+              "fill": "$text-primary",
+              "content": "Pourquoi travailler avec moi ?",
+              "fontFamily": "$font-heading",
+              "fontSize": 32,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "R0SF3n",
+              "name": "WhyGrid",
+              "width": "fill_container",
+              "gap": 48,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "c2yZsh",
+                  "name": "Why-Compréhension métier",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "x89Ya",
+                      "name": "IconBox",
+                      "width": 40,
+                      "height": 40,
+                      "fill": "#1D4ED820",
+                      "cornerRadius": 10,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "oObqR",
+                          "name": "Icon",
+                          "fill": "$text-primary",
+                          "content": "🧠",
+                          "fontFamily": "$font-body",
+                          "fontSize": 18,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "OsDJn",
+                      "name": "WhyCardTitle",
+                      "fill": "$text-primary",
+                      "content": "Compréhension métier",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "KpYyh",
+                      "name": "WhyCardDesc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "20 ans en entreprises et PME. Je comprends vos contraintes avant de coder.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ypgUP",
+                  "name": "Why-Intervention rapide",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "gGlFI",
+                      "name": "IconBox",
+                      "width": 40,
+                      "height": 40,
+                      "fill": "#1D4ED820",
+                      "cornerRadius": 10,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "qkRZR",
+                          "name": "Icon",
+                          "fill": "$text-primary",
+                          "content": "⚡",
+                          "fontFamily": "$font-body",
+                          "fontSize": 18,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "g5usS3",
+                      "name": "WhyCardTitle",
+                      "fill": "$text-primary",
+                      "content": "Intervention rapide",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "almHF",
+                      "name": "WhyCardDesc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Réponse sous 24h. Disponible pour urgences et contrats récurrents.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "GcGK4",
+                  "name": "Why-Solutions durables",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 14,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "a2C21l",
+                      "name": "IconBox",
+                      "width": 40,
+                      "height": 40,
+                      "fill": "#1D4ED820",
+                      "cornerRadius": 10,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ZHpyv",
+                          "name": "Icon",
+                          "fill": "$text-primary",
+                          "content": "🏗️",
+                          "fontFamily": "$font-body",
+                          "fontSize": 18,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "wtATK",
+                      "name": "WhyCardTitle",
+                      "fill": "$text-primary",
+                      "content": "Solutions durables",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "E3h7p",
+                      "name": "WhyCardDesc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Code propre, testé, documenté. Aucune dépendance page-builder — vous gardez la main.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "tTPHg",
+          "name": "Footer",
+          "width": "fill_container",
+          "height": 64,
+          "fill": "#0B1220",
+          "padding": [
+            0,
+            120
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "HZo7l",
+              "name": "Copyright",
+              "fill": "$text-muted",
+              "content": "© 2026 — Propulsé par Astro & Tailwind CSS",
+              "fontFamily": "$font-body",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "GTZPH",
+              "name": "FooterLinks",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "SB3M7",
+                  "name": "LinkedIn",
+                  "fill": "$text-secondary",
+                  "content": "LinkedIn",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "nUC5t",
+                  "name": "GitHub",
+                  "fill": "$text-secondary",
+                  "content": "GitHub",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "V5CJ2f",
+      "x": 1520,
+      "y": 0,
+      "name": "Homepage — Mobile",
+      "clip": true,
+      "width": 390,
+      "fill": "$bg-base",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "SHzXy",
+          "name": "MobileNav",
+          "width": "fill_container",
+          "height": 56,
+          "fill": "#0B1220",
+          "padding": [
+            0,
+            20
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "LuuSL",
+              "name": "Logo",
+              "fill": "$text-primary",
+              "content": "Paul.Sebas",
+              "fontFamily": "$font-heading",
+              "fontSize": 16,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "zGnq5",
+              "name": "LangMobile",
+              "gap": 4,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "YFdeZ",
+                  "name": "FR",
+                  "fill": "$text-primary",
+                  "content": "FR",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "BFkQA",
+                  "name": "EN",
+                  "fill": "$text-muted",
+                  "content": "EN",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "rrK8r",
+                  "name": "ES",
+                  "fill": "$text-muted",
+                  "content": "ES",
+                  "fontFamily": "$font-body",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "v2vPJo",
+          "name": "MobileHero",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            48,
+            20,
+            40,
+            20
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "npo12",
+              "name": "Badge",
+              "fill": "#0EA5E915",
+              "cornerRadius": 20,
+              "stroke": "#0EA5E940",
+              "strokeWidth": 1,
+              "gap": 6,
+              "padding": [
+                5,
+                12
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "Ns6Uv",
+                  "name": "Dot",
+                  "fill": "$secondary",
+                  "width": 6,
+                  "height": 6
+                },
+                {
+                  "type": "text",
+                  "id": "mJwPL",
+                  "name": "BadgeText",
+                  "fill": "$secondary",
+                  "content": "Disponible pour nouvelles missions",
+                  "fontFamily": "$font-body",
+                  "fontSize": 11,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "t6CBTC",
+              "name": "MobileH1",
+              "fill": "$text-primary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "J'aide les PME à construire des outils web fiables et performants",
+              "lineHeight": 1.2,
+              "fontFamily": "$font-heading",
+              "fontSize": 30,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "aHNFy",
+              "name": "MobileSubtitle",
+              "fill": "$text-secondary",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Développeur Full-Stack — De la conception à la mise en production.",
+              "lineHeight": 1.6,
+              "fontFamily": "$font-body",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "fSgtf",
+              "name": "MobileCTAs",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "i81Wf",
+                  "name": "CTA1",
+                  "width": "fill_container",
+                  "fill": "$primary",
+                  "cornerRadius": 12,
+                  "padding": [
+                    14,
+                    0
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "bSPRh",
+                      "name": "CTA1Label",
+                      "fill": "$text-primary",
+                      "content": "Discuter de votre projet →",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "cYU0l",
+                  "name": "CTA2",
+                  "width": "fill_container",
+                  "fill": "#00000000",
+                  "cornerRadius": 12,
+                  "stroke": "$border-subtle",
+                  "strokeWidth": 1,
+                  "padding": [
+                    14,
+                    0
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "u2hh6a",
+                      "name": "CTA2Label",
+                      "fill": "$text-secondary",
+                      "content": "Voir mes services",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Qn5AO",
+          "name": "MobileServices",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            40,
+            20
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "wmeka",
+              "name": "ServTitle",
+              "fill": "$text-primary",
+              "content": "Ce que je fais",
+              "fontFamily": "$font-heading",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "jCV9J",
+              "name": "MCard-Création de sites web",
+              "width": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": "$radius-md",
+              "stroke": "$border",
+              "strokeWidth": 1,
+              "gap": 14,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "g7hWej",
+                  "name": "MCardIcon",
+                  "fill": "$text-primary",
+                  "content": "🌐",
+                  "fontFamily": "$font-body",
+                  "fontSize": 22,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "O4zQIw",
+                  "name": "MCardText",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "q0Vys",
+                      "name": "MCardTitle",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Création de sites web",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "xueLs",
+                      "name": "MCardDesc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Sites vitrines, portfolios, landing pages — livrés en production.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "C6zQr",
+              "name": "MCard-Maintenance & évolution",
+              "width": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": "$radius-md",
+              "stroke": "$border",
+              "strokeWidth": 1,
+              "gap": 14,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "QlfAu",
+                  "name": "MCardIcon",
+                  "fill": "$text-primary",
+                  "content": "🔧",
+                  "fontFamily": "$font-body",
+                  "fontSize": 22,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "L2NQg",
+                  "name": "MCardText",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "tafWP",
+                      "name": "MCardTitle",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Maintenance & évolution",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "qQMEv",
+                      "name": "MCardDesc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Bugs, mises à jour, nouvelles fonctionnalités. Contrats récurrents.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "COuWV",
+              "name": "MCard-Automatisation métier",
+              "width": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": "$radius-md",
+              "stroke": "$border",
+              "strokeWidth": 1,
+              "gap": 14,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "aRHv5",
+                  "name": "MCardIcon",
+                  "fill": "$text-primary",
+                  "content": "⚡",
+                  "fontFamily": "$font-body",
+                  "fontSize": 22,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "YVjnF",
+                  "name": "MCardText",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "S0ZlNk",
+                      "name": "MCardTitle",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Automatisation métier",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "OKxLE",
+                      "name": "MCardDesc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Formulaires, exports, notifications — gagnez du temps.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "w4KbC",
+              "name": "MCard-Intégrations & outils",
+              "width": "fill_container",
+              "fill": "$surface",
+              "cornerRadius": "$radius-md",
+              "stroke": "$border",
+              "strokeWidth": 1,
+              "gap": 14,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "IVKb9",
+                  "name": "MCardIcon",
+                  "fill": "$text-primary",
+                  "content": "🔗",
+                  "fontFamily": "$font-body",
+                  "fontSize": 22,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "z7KlL",
+                  "name": "MCardText",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "DXlbn",
+                      "name": "MCardTitle",
+                      "fill": "$text-primary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Intégrations & outils",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "TRkHP",
+                      "name": "MCardDesc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "CRM, paiement, APIs — connectez vos outils entre eux.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "pxCN2",
+          "name": "MobileTrust",
+          "width": "fill_container",
+          "fill": "$surface",
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            32,
+            20
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "EFX1H",
+              "name": "TrustTitle",
+              "fill": "$text-primary",
+              "content": "Contact",
+              "fontFamily": "$font-heading",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "L97kck",
+              "name": "MTrust-Réponse sous 24h",
+              "fill": "#10B98115",
+              "cornerRadius": 20,
+              "stroke": "#10B98130",
+              "strokeWidth": 1,
+              "gap": 8,
+              "padding": [
+                8,
+                14
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "yyT5z",
+                  "name": "Icon",
+                  "fill": "$text-primary",
+                  "content": "✅",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "GzPrD",
+                  "name": "Label",
+                  "fill": "$accent",
+                  "content": "Réponse sous 24h",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "T3mPoJ",
+              "name": "MTrust-4 projets livrés",
+              "fill": "#10B98115",
+              "cornerRadius": 20,
+              "stroke": "#10B98130",
+              "strokeWidth": 1,
+              "gap": 8,
+              "padding": [
+                8,
+                14
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "crQpX",
+                  "name": "Icon",
+                  "fill": "$text-primary",
+                  "content": "📦",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "UtfRL",
+                  "name": "Label",
+                  "fill": "$accent",
+                  "content": "4 projets livrés",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Tn2k0",
+              "name": "MTrust-Disponible pour retainer",
+              "fill": "#10B98115",
+              "cornerRadius": 20,
+              "stroke": "#10B98130",
+              "strokeWidth": 1,
+              "gap": 8,
+              "padding": [
+                8,
+                14
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "A4PRL",
+                  "name": "Icon",
+                  "fill": "$text-primary",
+                  "content": "🔄",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "G1wI1d",
+                  "name": "Label",
+                  "fill": "$accent",
+                  "content": "Disponible pour retainer",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "p8r03o",
+              "name": "MContactBtn",
+              "width": "fill_container",
+              "fill": "$primary",
+              "cornerRadius": 12,
+              "padding": [
+                14,
+                0
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "XxjHe",
+                  "name": "MContactLabel",
+                  "fill": "$text-primary",
+                  "content": "paul.sebas.freelance@free.fr",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ANycn",
+          "name": "MobileFooter",
+          "width": "fill_container",
+          "fill": "#0B1220",
+          "layout": "vertical",
+          "gap": 8,
+          "padding": [
+            24,
+            20
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "KuyGy",
+              "name": "MFooterLogo",
+              "fill": "$text-primary",
+              "content": "Paul.Sebas",
+              "fontFamily": "$font-heading",
+              "fontSize": 16,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "BRz6B",
+              "name": "MFooterCopy",
+              "fill": "$text-muted",
+              "content": "© 2026 · Astro & Tailwind CSS",
+              "fontFamily": "$font-body",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "DrkYM",
+      "x": 1990,
+      "y": 0,
+      "name": "Page Service — Template",
+      "clip": true,
+      "width": 1440,
+      "fill": "$bg-base",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "cKon8",
+          "name": "Nav",
+          "width": "fill_container",
+          "height": 64,
+          "fill": "#0B1220CC",
+          "padding": [
+            0,
+            64
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "U5mn1",
+              "name": "Logo",
+              "fill": "$text-primary",
+              "content": "Paul.Sebas",
+              "fontFamily": "$font-heading",
+              "fontSize": 18,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "mGCLt",
+              "name": "NavLinks",
+              "gap": 40,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "GY5w1",
+                  "name": "Services",
+                  "fill": "$text-primary",
+                  "content": "Services",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Ykn5n",
+                  "name": "Projets",
+                  "fill": "$text-secondary",
+                  "content": "Projets",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "JfBrn",
+                  "name": "À propos",
+                  "fill": "$text-secondary",
+                  "content": "À propos",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "u9Qzvu",
+                  "name": "Contact",
+                  "fill": "$text-secondary",
+                  "content": "Contact",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "rIyai",
+          "name": "ServiceHero",
+          "width": "fill_container",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 180,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#111827",
+                "position": 0
+              },
+              {
+                "color": "#0B1220",
+                "position": 1
+              }
+            ]
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            80,
+            120,
+            72,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "Mei3r",
+              "name": "Breadcrumb",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "v4RzF",
+                  "name": "Home",
+                  "fill": "$text-muted",
+                  "content": "Accueil",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "H9UcKv",
+                  "name": "Sep",
+                  "fill": "$text-muted",
+                  "content": "/",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "SxG3C",
+                  "name": "Current",
+                  "fill": "$text-secondary",
+                  "content": "Création de site vitrine",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "EQ1sy",
+              "name": "ServiceTitle",
+              "fill": "$text-primary",
+              "textGrowth": "fixed-width",
+              "width": 720,
+              "content": "Création de site vitrine\npour PME et artisans",
+              "lineHeight": 1.15,
+              "fontFamily": "$font-heading",
+              "fontSize": 48,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "KRzyN",
+              "name": "ServiceSubtitle",
+              "fill": "$text-secondary",
+              "textGrowth": "fixed-width",
+              "width": 600,
+              "content": "Un site professionnel qui donne envie de vous contacter — livré en production, pas en Figma.",
+              "lineHeight": 1.6,
+              "fontFamily": "$font-body",
+              "fontSize": 18,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "DYA1q",
+              "name": "HeroCTA",
+              "fill": "$primary",
+              "cornerRadius": 12,
+              "gap": 8,
+              "padding": [
+                14,
+                28
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "azKTx",
+                  "name": "HeroCTALabel",
+                  "fill": "$text-primary",
+                  "content": "Demander un devis gratuit →",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "700"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "B6m8Q",
+          "name": "ProblemSection",
+          "width": "fill_container",
+          "gap": 80,
+          "padding": [
+            64,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "HlJuG",
+              "name": "ProblemLeft",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "rwe9p",
+                  "name": "ProblemLabel",
+                  "fill": "$secondary",
+                  "content": "LE PROBLÈME",
+                  "fontFamily": "$font-body",
+                  "fontSize": 11,
+                  "fontWeight": "700",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "S2ltxs",
+                  "name": "ProblemTitle",
+                  "fill": "$text-primary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Votre activité mérite mieux qu'un site qui dort",
+                  "lineHeight": 1.3,
+                  "fontFamily": "$font-heading",
+                  "fontSize": 28,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "vidRA",
+                  "name": "ProblemDesc",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Vous avez essayé les constructeurs de sites. Le résultat ressemble à tout le monde, charge lentement, et ne génère pas de contacts.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "AldFp",
+              "name": "ProblemPoints",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "liv8D",
+                  "name": "ProbPoint",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "K9ltg",
+                      "name": "Bullet",
+                      "fill": "#EF4444",
+                      "content": "✗",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "R4CRa",
+                      "name": "ProbText",
+                      "fill": "$text-secondary",
+                      "content": "Site générique qui ne reflète pas votre image",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rZGFi",
+                  "name": "ProbPoint",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "qnE3O",
+                      "name": "Bullet",
+                      "fill": "#EF4444",
+                      "content": "✗",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "w0Sp07",
+                      "name": "ProbText",
+                      "fill": "$text-secondary",
+                      "content": "Chargement lent → clients qui partent",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "zK8C2",
+                  "name": "ProbPoint",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "S9QdGY",
+                      "name": "Bullet",
+                      "fill": "#EF4444",
+                      "content": "✗",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "e42bPm",
+                      "name": "ProbText",
+                      "fill": "$text-secondary",
+                      "content": "Pas de formulaire de contact efficace",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "YHbu6",
+                  "name": "ProbPoint",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "AjhKb",
+                      "name": "Bullet",
+                      "fill": "#EF4444",
+                      "content": "✗",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "sYVwB",
+                      "name": "ProbText",
+                      "fill": "$text-secondary",
+                      "content": "Impossible à mettre à jour soi-même",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "leMvc",
+          "name": "SolutionSection",
+          "width": "fill_container",
+          "fill": "$surface",
+          "gap": 80,
+          "padding": [
+            64,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "yoeo3",
+              "name": "SolutionLeft",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "i20V5",
+                  "name": "SolLabel",
+                  "fill": "$accent",
+                  "content": "LA SOLUTION",
+                  "fontFamily": "$font-body",
+                  "fontSize": 11,
+                  "fontWeight": "700",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "MakA5",
+                  "name": "SolTitle",
+                  "fill": "$text-primary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Un site sur-mesure, rapide et qui convertit",
+                  "lineHeight": 1.3,
+                  "fontFamily": "$font-heading",
+                  "fontSize": 28,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "G5S6l",
+                  "name": "SolDesc",
+                  "fill": "$text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Je conçois et développe votre site en code, sans page builder. Résultat : chargement rapide, design unique, formulaire de contact fonctionnel.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "kdVxe",
+              "name": "Deliverables",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "NEfzb",
+                  "name": "DelItem",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "k2N6O",
+                      "name": "Check",
+                      "fill": "$accent",
+                      "content": "✓",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "YTWN0",
+                      "name": "DelText",
+                      "fill": "$text-secondary",
+                      "content": "Site responsive (mobile, tablette, desktop)",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "hiIYX",
+                  "name": "DelItem",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Hgd2N",
+                      "name": "Check",
+                      "fill": "$accent",
+                      "content": "✓",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "vKqsh",
+                      "name": "DelText",
+                      "fill": "$text-secondary",
+                      "content": "Formulaire de contact intégré",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "U7jHPB",
+                  "name": "DelItem",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ZaBAr",
+                      "name": "Check",
+                      "fill": "$accent",
+                      "content": "✓",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "h4SFIp",
+                      "name": "DelText",
+                      "fill": "$text-secondary",
+                      "content": "Référencement Google (SEO de base)",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "S5lID",
+                  "name": "DelItem",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "h23X8c",
+                      "name": "Check",
+                      "fill": "$accent",
+                      "content": "✓",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "pNB84",
+                      "name": "DelText",
+                      "fill": "$text-secondary",
+                      "content": "Mise en ligne et nom de domaine",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "d2o7w",
+                  "name": "DelItem",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "zHUs5",
+                      "name": "Check",
+                      "fill": "$accent",
+                      "content": "✓",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "t3i6bz",
+                      "name": "DelText",
+                      "fill": "$text-secondary",
+                      "content": "1 mois de support inclus",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "UWHHB",
+          "name": "ProcessSection",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 40,
+          "padding": [
+            64,
+            120
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "LoviP",
+              "name": "ProcessTitle",
+              "fill": "$text-primary",
+              "content": "Comment ça se passe ?",
+              "fontFamily": "$font-heading",
+              "fontSize": 32,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "QC4Qp",
+              "name": "Steps",
+              "width": "fill_container",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "W6ZOO",
+                  "name": "Step-01",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": [
+                    0,
+                    16,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "l5aw4",
+                      "name": "StepNum",
+                      "fill": "$primary",
+                      "content": "01",
+                      "lineHeight": 1,
+                      "fontFamily": "$font-heading",
+                      "fontSize": 32,
+                      "fontWeight": "800"
+                    },
+                    {
+                      "type": "text",
+                      "id": "vXtOq",
+                      "name": "StepTitle",
+                      "fill": "$text-primary",
+                      "content": "Découverte",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "odY87",
+                      "name": "StepDesc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "On échange 30 min sur votre activité, vos clients, vos objectifs.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ZQvcM",
+                  "name": "Step-02",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": [
+                    0,
+                    16,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "w3Hhc",
+                      "name": "StepNum",
+                      "fill": "$primary",
+                      "content": "02",
+                      "lineHeight": 1,
+                      "fontFamily": "$font-heading",
+                      "fontSize": 32,
+                      "fontWeight": "800"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Qrj4V",
+                      "name": "StepTitle",
+                      "fill": "$text-primary",
+                      "content": "Proposition",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "EQ6n4",
+                      "name": "StepDesc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Je vous soumets une maquette et un devis détaillé sous 48h.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "jT0hL",
+                  "name": "Step-03",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": [
+                    0,
+                    16,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Q1Kpg",
+                      "name": "StepNum",
+                      "fill": "$primary",
+                      "content": "03",
+                      "lineHeight": 1,
+                      "fontFamily": "$font-heading",
+                      "fontSize": 32,
+                      "fontWeight": "800"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Mswlj",
+                      "name": "StepTitle",
+                      "fill": "$text-primary",
+                      "content": "Développement",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Zx8kT",
+                      "name": "StepDesc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Je code votre site en 2-3 semaines avec des points réguliers.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "XtZJE",
+                  "name": "Step-04",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": [
+                    0,
+                    16,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "upZiX",
+                      "name": "StepNum",
+                      "fill": "$primary",
+                      "content": "04",
+                      "lineHeight": 1,
+                      "fontFamily": "$font-heading",
+                      "fontSize": 32,
+                      "fontWeight": "800"
+                    },
+                    {
+                      "type": "text",
+                      "id": "hl8cn",
+                      "name": "StepTitle",
+                      "fill": "$text-primary",
+                      "content": "Livraison",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "OFjKG",
+                      "name": "StepDesc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Mise en ligne + formation rapide pour gérer votre contenu.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "lavFQ",
+                  "name": "Step-05",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": [
+                    0,
+                    16,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "giYgM",
+                      "name": "StepNum",
+                      "fill": "$primary",
+                      "content": "05",
+                      "lineHeight": 1,
+                      "fontFamily": "$font-heading",
+                      "fontSize": 32,
+                      "fontWeight": "800"
+                    },
+                    {
+                      "type": "text",
+                      "id": "T4uwl",
+                      "name": "StepTitle",
+                      "fill": "$text-primary",
+                      "content": "Support",
+                      "fontFamily": "$font-heading",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "O0i4Am",
+                      "name": "StepDesc",
+                      "fill": "$text-secondary",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "1 mois de support inclus. Contrat retainer disponible.",
+                      "lineHeight": 1.5,
+                      "fontFamily": "$font-body",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "KYfun",
+          "name": "FinalCTA",
+          "width": "fill_container",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 135,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#1D4ED820",
+                "position": 0
+              },
+              {
+                "color": "#0EA5E910",
+                "position": 1
+              }
+            ]
+          },
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            64,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "mZ3MR",
+              "name": "CTATitle",
+              "fill": "$text-primary",
+              "content": "Prêt à lancer votre projet ?",
+              "textAlign": "center",
+              "fontFamily": "$font-heading",
+              "fontSize": 36,
+              "fontWeight": "800"
+            },
+            {
+              "type": "text",
+              "id": "tDlC7",
+              "name": "CTASubtitle",
+              "fill": "$text-secondary",
+              "content": "Réponse sous 24h. Premier échange gratuit, sans engagement.",
+              "textAlign": "center",
+              "fontFamily": "$font-body",
+              "fontSize": 16,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "BMclg",
+              "name": "FinalCTABtn",
+              "fill": "$primary",
+              "cornerRadius": 12,
+              "padding": [
+                16,
+                36
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "gcuWv",
+                  "name": "FinalCTALabel",
+                  "fill": "$text-primary",
+                  "content": "Discuter de votre projet →",
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "vN5hC",
+              "name": "CTAEmail",
+              "fill": "$text-muted",
+              "content": "paul.sebas.freelance@free.fr",
+              "fontFamily": "$font-body",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "X6fUlw",
+          "name": "Footer",
+          "width": "fill_container",
+          "height": 60,
+          "fill": "#0B1220",
+          "padding": [
+            0,
+            120
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "WczBD",
+              "name": "FootCopy",
+              "fill": "$text-muted",
+              "content": "© 2026 — Paul.Sebas",
+              "fontFamily": "$font-body",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "P939cG",
+              "name": "FootLinks",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Nzxam",
+                  "name": "LiFooter",
+                  "fill": "$text-secondary",
+                  "content": "LinkedIn",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "MBPZ2",
+                  "name": "GhFooter",
+                  "fill": "$text-secondary",
+                  "content": "GitHub",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
-  ]
+  ],
+  "variables": {
+    "accent": {
+      "type": "color",
+      "value": "#10B981"
+    },
+    "bg-base": {
+      "type": "color",
+      "value": "#0B1220"
+    },
+    "border": {
+      "type": "color",
+      "value": "#1F2937"
+    },
+    "border-subtle": {
+      "type": "color",
+      "value": "#2d3748"
+    },
+    "font-body": {
+      "type": "string",
+      "value": "Inter"
+    },
+    "font-heading": {
+      "type": "string",
+      "value": "Space Grotesk"
+    },
+    "primary": {
+      "type": "color",
+      "value": "#1D4ED8"
+    },
+    "primary-hover": {
+      "type": "color",
+      "value": "#1e40af"
+    },
+    "radius-lg": {
+      "type": "number",
+      "value": 16
+    },
+    "radius-md": {
+      "type": "number",
+      "value": 12
+    },
+    "radius-sm": {
+      "type": "number",
+      "value": 8
+    },
+    "radius-xl": {
+      "type": "number",
+      "value": 24
+    },
+    "secondary": {
+      "type": "color",
+      "value": "#0EA5E9"
+    },
+    "surface": {
+      "type": "color",
+      "value": "#111827"
+    },
+    "surface-2": {
+      "type": "color",
+      "value": "#1a2235"
+    },
+    "text-muted": {
+      "type": "color",
+      "value": "#475569"
+    },
+    "text-primary": {
+      "type": "color",
+      "value": "#F8FAFC"
+    },
+    "text-secondary": {
+      "type": "color",
+      "value": "#94A3B8"
+    }
+  }
 }

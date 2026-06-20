@@ -6,20 +6,22 @@
 
 ---
 
-## État technique actuel ✅
+## État technique actuel
 
-| Élément                             | État      |
-| ----------------------------------- | --------- |
-| Astro 6.4.8 + Content Layer API     | ✅         |
-| i18n FR (défaut) + EN + ES          | ✅         |
-| 4 projets × 3 langues (12 markdown) | ✅         |
-| Sections About + Contact            | ✅         |
-| Switcher 3 langues                  | ✅         |
-| OG tags + meta description          | ✅         |
-| vercel.json (redirect / → /fr/)     | ✅         |
-| Build statique 16 pages             | ✅         |
-| pnpm uniquement                     | ✅         |
-| Déploiement Vercel                  | ❌ à faire |
+| Élément                                  | État      |
+| ---------------------------------------- | --------- |
+| Astro 6.4.8 + Content Layer API          | ✅         |
+| i18n FR (défaut) + EN + ES               | ✅         |
+| 4 projets × 3 langues (12 markdown)      | ✅         |
+| Sections About + Contact                 | ✅         |
+| Switcher 3 langues                       | ✅         |
+| OG tags + meta description               | ✅         |
+| vercel.json (redirect / → /fr/)          | ✅         |
+| Build statique 16 pages                  | ✅         |
+| pnpm + Node 24                           | ✅         |
+| Design system (tokens.css + Bunny Fonts) | ✅         |
+| Homepage refonte PME                     | ✅         |
+| Déploiement Vercel                       | ❌ à faire |
 
 ---
 
@@ -31,11 +33,9 @@
 
 ---
 
-## Phase 0 — Branding & Design System
+## Phase 0 — Branding & Design System ✅
 
-> À faire AVANT tout nouveau développement. Définit l'identité visuelle de tout le site.
-
-- [ ] Choisir palette définitive (recommandée : "Ocean Tech Premium")
+- [x] Choisir palette définitive : **Ocean Tech Premium**
   
   ```text
   Primary   #1D4ED8  (bleu confiance)
@@ -46,62 +46,47 @@
   Border    #1F2937
   ```
 
-- [ ] Choisir typographie : Inter (body) + Space Grotesk (titres)
-- [ ] Générer logo avec prompt Nano Banana (voir `docs/optimisation.md` section 5)
-- [ ] Créer `src/styles/tokens.css` (variables CSS design system)
-- [ ] Créer maquettes Pencil : homepage desktop + mobile + page service
-- [ ] Valider design système avant d'écrire du CSS
+- [x] Choisir typographie : Inter (body) + Space Grotesk (titres) via Bunny Fonts
+- [x] Créer `src/styles/tokens.css` (variables CSS design system)
+- [x] Logo SVG : `public/logo.svg` + `public/favicon.svg` (prompt Nano Banana — voir `docs/optimisation.md` section 5)
+- [x] Maquettes Pencil : homepage desktop + mobile + page service (`docs/maquettes.pen`)
 
 ---
 
-## Phase 1 — Refonte Homepage (conversion PME)
+## Phase 1 — Refonte Homepage (conversion PME) ✅ (partiel)
 
-> Problème actuel : "portfolio dev" → doit devenir "page de génération de leads PME".
+### Hero ✅
+- [x] Titre PME : "J'aide les PME et acteurs locaux à construire des outils web fiables et performants"
+- [x] Sous-titre : services concrets (pas stack technique)
+- [x] 2 CTA : "Discuter de votre projet" + "Voir mes services"
+- [x] Décliné EN + ES
 
-### Hero (remplace le titre actuel)
+### Section Services ✅
+- [x] 4 cartes : Création de sites web / Maintenance & évolution / Automatisation métier / Intégrations & outils
+- [x] Composant `ServiceCard.astro` créé
+- [x] Décliné EN + ES
+- [ ] Lien vers pages `/services/*` (Phase 2 non créée)
 
-- [ ] Titre orienté résultat client : "J'aide les PME et acteurs locaux à construire des outils web fiables et performants"
-- [ ] Sous-titre : services concrets (pas stack technique)
-- [ ] 2 CTA visibles : "Discuter de votre projet" + "Voir mes services"
-- [ ] Décliner EN + ES
+### Section "Pourquoi travailler avec moi" ✅
+- [x] 3 arguments : Compréhension métier / Intervention rapide / Solutions durables
+- [x] Composant `WhyCard.astro` créé
+- [x] Décliné EN + ES
 
-### Section Services (remplace Expertise Technique)
+### Section Preuves sociales ✅
+- [x] `TrustIndicators.astro` : "Réponse sous 24h" / "4 projets livrés" / "Disponible pour retainer"
 
-- [ ] 4 cartes : Création de sites web / Maintenance & évolution / Automatisation métier / Intégrations & outils
-- [ ] Langage métier uniquement (pas de frameworks)
-- [ ] Lien vers pages `/services/*` une fois créées
-- [ ] Décliner EN + ES
-
-### Section Projets → Case Studies
-
+### Section Projets → Case Studies ❌ (à faire)
 - [ ] Reformuler chaque projet en angle business (problème → solution → résultat)
-- [ ] Stack en bas de page, pas en titre de card
-- [ ] Ajouter disclaimer : "expérimentations perso" pour les projets techniques actuels
-- [ ] Décliner EN + ES
+- [ ] Ajouter disclaimer "expérimentations perso"
 
-### Section "Pourquoi travailler avec moi" (remplace About autobiographique)
-
-- [ ] 3 arguments métier : Compréhension métier / Intervention rapide / Solutions durables
-- [ ] Pas autobiographique — orienté bénéfice client
-- [ ] Décliner EN + ES
-
-### Section Preuves sociales (nouveau)
-
-- [ ] Indicateurs de confiance : "Réponse sous 24h" / "X projets livrés" / "Disponible pour retainer"
-- [ ] Témoignages (fictifs acceptables au lancement, à remplacer dès 1er client)
-- [ ] Composant `TrustIndicators.astro`
-
-### Section Contact (renforcer)
-
-- [ ] Remplacer "mailto:" pur par formulaire court (nom + email + message)
-- [ ] Composant `ContactForm.astro` (Netlify Forms ou Formspree — gratuit)
-- [ ] CTA fort : "Réponse sous 24h"
-- [ ] Garder email + GitHub + Malt (quand actif)
-- [ ] Décliner EN + ES
+### Section Contact ⚠️ (partiel)
+- [x] Email `paul.sebas.freelance@free.fr` + GitHub
+- [ ] Composant `ContactForm.astro` (Formspree — remplacer le mailto pur)
+- [ ] CTA fort "Réponse sous 24h" intégré au formulaire
 
 ---
 
-## Phase 2 — Architecture SEO (pages services)
+## Phase 2 — Architecture SEO (pages services) ❌
 
 > Objectif : capter les clients en phase d'achat via Google.
 
@@ -120,7 +105,7 @@
 
 ---
 
-## Phase 3 — SEO Local (zones géographiques)
+## Phase 3 — SEO Local (zones géographiques) ❌
 
 > Avantage concurrentiel fort : connexion Antilles françaises + France.
 
@@ -139,7 +124,7 @@
 
 ---
 
-## Phase 4 — SEO Sectoriel (pages secteurs)
+## Phase 4 — SEO Sectoriel (pages secteurs) ❌
 
 ### Créer `src/pages/fr/secteurs/`
 
@@ -154,7 +139,7 @@
 
 ---
 
-## Phase 5 — Blog SEO (acquisition froide)
+## Phase 5 — Blog SEO (acquisition froide) ❌
 
 ### Créer `src/content/blog/` + `src/pages/fr/blog/`
 
@@ -178,7 +163,7 @@
 
 ---
 
-## Phase 6 — Case Studies (contenu business)
+## Phase 6 — Case Studies (contenu business) ❌
 
 > Complémentaire aux projets techniques existants — pour l'audience PME.
 
@@ -193,19 +178,20 @@
 
 ---
 
-## Phase 7 — Composants manquants
+## Phase 7 — Composants manquants ✅
 
-| Composant               | Priorité  | Description                                    |
-| ----------------------- | --------- | ---------------------------------------------- |
-| `ContactForm.astro`     | 🔴 Haute   | Formulaire court (Formspree gratuit)           |
-| `CTASection.astro`      | 🔴 Haute   | Section CTA réutilisable (fin de chaque page)  |
-| `TrustIndicators.astro` | 🟡 Moyenne | Badges de confiance (délai, expérience, dispo) |
-| `Testimonials.astro`    | 🟡 Moyenne | Témoignages (fictifs → réels)                  |
-| `ServiceCard.astro`     | 🟡 Moyenne | Card service réutilisable (pages /services/)   |
+| Composant               | État | Priorité  | Description                                   |
+| ----------------------- | ---- | --------- | --------------------------------------------- |
+| `ServiceCard.astro`     | ✅    | 🔴 Haute   | Card service réutilisable                     |
+| `WhyCard.astro`         | ✅    | 🔴 Haute   | Arguments différenciants                      |
+| `TrustIndicators.astro` | ✅    | 🟡 Moyenne | Badges de confiance                           |
+| `ContactForm.astro`     | ✅    | 🔴 Haute   | Formspree (à configurer: prop `formId`)       |
+| `CTASection.astro`      | ✅    | 🔴 Haute   | Section CTA réutilisable (fin de chaque page) |
+| `Testimonials.astro`    | ❌    | 🟡 Moyenne | Témoignages (fictifs → réels)                 |
 
 ---
 
-## Phase 8 — SEO Technique
+## Phase 8 — SEO Technique ❌
 
 - [ ] Sitemap XML automatique (`@astrojs/sitemap` — intégration native Astro)
 - [ ] `public/robots.txt`
@@ -217,21 +203,20 @@
 
 ---
 
-## Phase 9 — Déploiement Vercel
+## Phase 9 — Déploiement Vercel ❌
 
 - [ ] Choisir nom de domaine (budget 10-15€/an max)
   - Option A : `paul-sebas.dev`
   - Option B : `paul-sebas-pro.dev`
   - Option C : nom-service (ex: `artisanweb.fr` — si positionnement niche)
-- [ ] Connecter repo GitHub à Vercel
+- [ ] Connecter repo GitHub à Vercel (build : `pnpm run build` / output : `dist` / Node : **24**)
 - [ ] Configurer domaine custom dans Vercel
-- [ ] Vérifier build prod (Node 22 sur Vercel — OK natif)
 - [ ] Tester les 16 routes statiques + redirections
-- [ ] Analytics : ajouter Umami (gratuit, RGPD) ou Vercel Analytics (gratuit tier)
+- [ ] Analytics : Umami (gratuit, RGPD) ou Vercel Analytics (gratuit tier)
 
 ---
 
-## Phase 10 — Activation Canaux Acquisition
+## Phase 10 — Activation Canaux Acquisition ❌
 
 > À démarrer dès portfolio en ligne.
 
@@ -275,8 +260,10 @@
 ## Ordre d'exécution recommandé
 
 ```text
-BLOQUANT LÉGAL → Phase 0 (branding) → Phase 1 (homepage)
-    → Phase 2 (services) + Phase 8 (SEO tech) → Phase 9 (déploiement)
+✅ Phase 0 (branding) → ✅ Phase 1 (homepage)
+    → Phase 7 partiel (ContactForm + CTASection)
+    → Phase 2 (services FR) + Phase 8 (SEO tech)
+    → Phase 9 (déploiement Vercel + domaine)
     → Phase 10 (Malt + agences) — PREMIER CLIENT CIBLE J60
     → Phase 3 (zones) → Phase 4 (secteurs) → Phase 5 (blog)
     → Phase 6 (case studies) → Phase 10 (LinkedIn activation J60+)
