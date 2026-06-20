@@ -5,6 +5,7 @@ import ProjectCard from "../../components/ProjectCard.astro";
 import ServiceCard from "../../components/ServiceCard.astro";
 import WhyCard from "../../components/WhyCard.astro";
 import TrustIndicators from "../../components/TrustIndicators.astro";
+import ContactForm from "../../components/ContactForm.astro";
 import { getCollection } from "astro:content";
 import { ui } from "../../i18n/ui";
 
@@ -15,19 +16,52 @@ const projects = await getCollection("projects", ({ id }) => {
   return id.startsWith("en/");
 });
 
-const sortedProjects = projects.sort((a, b) => a.data.title.localeCompare(b.data.title));
+const sortedProjects = projects.sort((a, b) =>
+  a.data.title.localeCompare(b.data.title),
+);
 
 const services = [
-  { icon: "🌐", title: t["services.web.title"], description: t["services.web.desc"] },
-  { icon: "🔧", title: t["services.maintenance.title"], description: t["services.maintenance.desc"] },
-  { icon: "⚡", title: t["services.automation.title"], description: t["services.automation.desc"] },
-  { icon: "🔗", title: t["services.integration.title"], description: t["services.integration.desc"] },
+  {
+    icon: "🌐",
+    title: t["services.web.title"],
+    description: t["services.web.desc"],
+  },
+  {
+    icon: "🔧",
+    title: t["services.maintenance.title"],
+    description: t["services.maintenance.desc"],
+  },
+  {
+    icon: "⚡",
+    title: t["services.automation.title"],
+    description: t["services.automation.desc"],
+  },
+  {
+    icon: "🔗",
+    title: t["services.integration.title"],
+    description: t["services.integration.desc"],
+  },
 ];
 
 const whyItems = [
-  { icon: "🧠", title: t["why.expertise.title"], description: t["why.expertise.desc"], accentColor: "bg-blue-500/10 text-blue-400" },
-  { icon: "⚡", title: t["why.speed.title"], description: t["why.speed.desc"], accentColor: "bg-cyan-500/10 text-cyan-400" },
-  { icon: "🏗️", title: t["why.durability.title"], description: t["why.durability.desc"], accentColor: "bg-emerald-500/10 text-emerald-400" },
+  {
+    icon: "🧠",
+    title: t["why.expertise.title"],
+    description: t["why.expertise.desc"],
+    accentColor: "bg-blue-500/10 text-blue-400",
+  },
+  {
+    icon: "⚡",
+    title: t["why.speed.title"],
+    description: t["why.speed.desc"],
+    accentColor: "bg-cyan-500/10 text-cyan-400",
+  },
+  {
+    icon: "🏗️",
+    title: t["why.durability.title"],
+    description: t["why.durability.desc"],
+    accentColor: "bg-emerald-500/10 text-emerald-400",
+  },
 ];
 
 const trustItems = [
@@ -39,14 +73,18 @@ const trustItems = [
 
 <MainLayout title="Home" lang={lang}>
   <main class="max-w-5xl mx-auto px-6 pt-32 pb-24">
-
     <!-- Hero -->
     <section class="mb-24">
-      <div class="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 border border-cyan-500/30 bg-cyan-500/5 px-3 py-1 rounded-full mb-8">
+      <div
+        class="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 border border-cyan-500/30 bg-cyan-500/5 px-3 py-1 rounded-full mb-8"
+      >
         <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
         Available for new projects
       </div>
-      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight" style="font-family: var(--font-heading)">
+      <h1
+        class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight"
+        style="font-family: var(--font-heading)"
+      >
         {t["hero.title"]}
       </h1>
       <p class="text-lg text-slate-400 max-w-2xl leading-relaxed mb-10">
@@ -70,54 +108,81 @@ const trustItems = [
 
     <!-- Services -->
     <section id="services" class="mb-24">
-      <h2 class="text-3xl font-bold mb-12 flex items-center gap-4" style="font-family: var(--font-heading)">
+      <h2
+        class="text-3xl font-bold mb-12 flex items-center gap-4"
+        style="font-family: var(--font-heading)"
+      >
         <span class="h-px w-12 bg-blue-500"></span>
         {t["services.title"]}
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {services.map((s) => (
-          <ServiceCard title={s.title} description={s.description} icon={s.icon} />
-        ))}
+        {
+          services.map((s) => (
+            <ServiceCard
+              title={s.title}
+              description={s.description}
+              icon={s.icon}
+            />
+          ))
+        }
       </div>
     </section>
 
     <!-- Projects -->
     <section id="projects" class="mb-24">
-      <h2 class="text-3xl font-bold mb-12 flex items-center gap-4" style="font-family: var(--font-heading)">
+      <h2
+        class="text-3xl font-bold mb-12 flex items-center gap-4"
+        style="font-family: var(--font-heading)"
+      >
         <span class="h-px w-12 bg-blue-500"></span>
         {t["projects.title"]}
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {sortedProjects.map((project) => (
-          <ProjectCard
-            title={project.data.title}
-            description={project.data.subtitle}
-            stack={project.data.stack}
-            category={project.data.category}
-            githubUrl={project.data.githubUrl}
-            slug={project.id.split("/")[1].replace(".md", "")}
-            lang={lang}
-          />
-        ))}
+        {
+          sortedProjects.map((project) => (
+            <ProjectCard
+              title={project.data.title}
+              description={project.data.subtitle}
+              stack={project.data.stack}
+              category={project.data.category}
+              githubUrl={project.data.githubUrl}
+              slug={project.id.split("/")[1].replace(".md", "")}
+              lang={lang}
+            />
+          ))
+        }
       </div>
     </section>
 
     <!-- Why me -->
     <section id="about" class="mb-24">
-      <h2 class="text-3xl font-bold mb-12 flex items-center gap-4" style="font-family: var(--font-heading)">
+      <h2
+        class="text-3xl font-bold mb-12 flex items-center gap-4"
+        style="font-family: var(--font-heading)"
+      >
         <span class="h-px w-12 bg-blue-500"></span>
         {t["why.title"]}
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-        {whyItems.map((w) => (
-          <WhyCard title={w.title} description={w.description} icon={w.icon} accentColor={w.accentColor} />
-        ))}
+        {
+          whyItems.map((w) => (
+            <WhyCard
+              title={w.title}
+              description={w.description}
+              icon={w.icon}
+              accentColor={w.accentColor}
+            />
+          ))
+        }
       </div>
     </section>
 
     <!-- Technical expertise -->
     <section id="skills" class="mb-24">
-      <h2 class="text-3xl font-bold mb-12 flex items-center gap-4" style="font-family: var(--font-heading)">
+      <h2
+        class="text-3xl font-bold mb-12 flex items-center gap-4"
+        style="font-family: var(--font-heading)"
+      >
         <span class="h-px w-12 bg-blue-500"></span>
         {t["skills.title"]}
       </h2>
@@ -125,29 +190,59 @@ const trustItems = [
         <SkillCategory
           title={t["skills.frontend"]}
           iconColor="bg-blue-500"
-          skills={["React 19", "Next.js", "Svelte 5", "Vue 3.5", "Astro 6", "Tailwind CSS v4", "TypeScript"]}
+          skills={[
+            "React 19",
+            "Next.js",
+            "Svelte 5",
+            "Vue 3.5",
+            "Astro 6",
+            "Tailwind CSS v4",
+            "TypeScript",
+          ]}
         />
         <SkillCategory
           title={t["skills.backend"]}
           iconColor="bg-emerald-500"
-          skills={["Node.js", "Express 5", "PostgreSQL", "MongoDB", "Sequelize", "Prisma 7", "REST API"]}
+          skills={[
+            "Node.js",
+            "Express 5",
+            "PostgreSQL",
+            "MongoDB",
+            "Sequelize",
+            "Prisma 7",
+            "REST API",
+          ]}
         />
         <SkillCategory
           title={t["skills.devops"]}
           iconColor="bg-orange-500"
-          skills={["Docker", "Docker Compose", "GitHub Actions", "Linux", "CI/CD"]}
+          skills={[
+            "Docker",
+            "Docker Compose",
+            "GitHub Actions",
+            "Linux",
+            "CI/CD",
+          ]}
         />
         <SkillCategory
           title={t["skills.saas"]}
           iconColor="bg-purple-500"
-          skills={["DB Modeling", "JWT Auth", "MVC Architecture", "Vitest & Supertest"]}
+          skills={[
+            "DB Modeling",
+            "JWT Auth",
+            "MVC Architecture",
+            "Vitest & Supertest",
+          ]}
         />
       </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="mb-8">
-      <h2 class="text-3xl font-bold mb-4 flex items-center gap-4" style="font-family: var(--font-heading)">
+      <h2
+        class="text-3xl font-bold mb-4 flex items-center gap-4"
+        style="font-family: var(--font-heading)"
+      >
         <span class="h-px w-12 bg-blue-500"></span>
         {t["contact.title"]}
       </h2>
@@ -155,26 +250,22 @@ const trustItems = [
       <p class="text-lg text-slate-400 my-8 max-w-2xl leading-relaxed">
         {t["contact.desc"]}
       </p>
-      <div class="flex flex-wrap gap-4">
-        <a
-          href="mailto:papou138@gmail.com"
-          class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold transition-colors text-sm"
-        >
-          {t["contact.email"]} — papou138@gmail.com
-        </a>
+      <ContactForm lang={lang} />
+      <div class="flex flex-wrap gap-3 mt-6">
         <a
           href="https://github.com/Paul-Sebas-Pro"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 border border-slate-700 hover:border-slate-500 px-6 py-3 rounded-xl font-bold transition-colors text-sm text-slate-300"
+          class="inline-flex items-center gap-2 border border-slate-800 hover:border-slate-600 px-5 py-2.5 rounded-xl transition-colors text-sm text-slate-400 hover:text-slate-300"
         >
           {t["contact.github"]} — Paul-Sebas-Pro
         </a>
-        <span class="inline-flex items-center gap-2 border border-slate-800 px-6 py-3 rounded-xl font-bold text-slate-600 cursor-not-allowed text-sm">
+        <span
+          class="inline-flex items-center gap-2 border border-slate-800 px-5 py-2.5 rounded-xl text-slate-600 cursor-not-allowed text-sm"
+        >
           {t["contact.malt"]}
         </span>
       </div>
     </section>
-
   </main>
 </MainLayout>

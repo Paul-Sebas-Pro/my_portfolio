@@ -1,0 +1,117 @@
+---
+import { ui } from "../i18n/ui";
+
+interface Props {
+  lang: "fr" | "en" | "es";
+  formId?: string;
+}
+
+const { lang, formId = "YOUR_FORMSPREE_ID" } = Astro.props;
+const t = ui[lang];
+const formAction = `https://formspree.io/f/${formId}`;
+---
+
+<form
+  id="contact-form"
+  action={formAction}
+  method="POST"
+  class="space-y-4 max-w-xl"
+>
+  <div>
+    <label for="name" class="block text-sm font-medium text-slate-300 mb-1.5">
+      {t["contact.form.name"]}
+    </label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 text-sm placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+    />
+  </div>
+
+  <div>
+    <label for="email" class="block text-sm font-medium text-slate-300 mb-1.5">
+      {t["contact.form.email"]}
+    </label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+      class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 text-sm placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+    />
+  </div>
+
+  <div>
+    <label
+      for="message"
+      class="block text-sm font-medium text-slate-300 mb-1.5"
+    >
+      {t["contact.form.message"]}
+    </label>
+    <textarea
+      id="message"
+      name="message"
+      required
+      rows="5"
+      class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 text-sm placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors resize-none"
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    id="submit-btn"
+    class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-7 py-3.5 rounded-xl font-bold transition-colors text-sm disabled:opacity-60 disabled:cursor-not-allowed"
+  >
+    {t["contact.form.send"]}
+  </button>
+
+  <p
+    id="form-success"
+    class="hidden text-emerald-400 text-sm font-medium pt-1"
+  >
+    {t["contact.form.success"]}
+  </p>
+  <p id="form-error" class="hidden text-red-400 text-sm pt-1">
+    {t["contact.form.error"]}
+  </p>
+</form>
+
+<script define:vars={{ sendingLabel: t["contact.form.sending"] }}>
+  const form = document.getElementById("contact-form");
+  const btn = document.getElementById("submit-btn");
+  const success = document.getElementById("form-success");
+  const error = document.getElementById("form-error");
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!btn || !form) return;
+
+    const originalLabel = btn.textContent ?? "";
+    btn.textContent = sendingLabel;
+    btn.setAttribute("disabled", "true");
+    success?.classList.add("hidden");
+    error?.classList.add("hidden");
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        form.reset();
+        success?.classList.remove("hidden");
+      } else {
+        error?.classList.remove("hidden");
+      }
+    } catch {
+      error?.classList.remove("hidden");
+    } finally {
+      btn.textContent = originalLabel;
+      btn.removeAttribute("disabled");
+    }
+  });
+</script>
