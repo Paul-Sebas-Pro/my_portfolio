@@ -17,7 +17,7 @@
 | Switcher 3 langues                       | ✅         |
 | OG tags + meta description               | ✅         |
 | vercel.json (redirect / → /fr/)          | ✅         |
-| Build statique 16 pages                  | ✅         |
+| Build statique 36 pages                  | ✅         |
 | pnpm + Node 24                           | ✅         |
 | Design system (tokens.css + Bunny Fonts) | ✅         |
 | Homepage refonte PME                     | ✅         |
@@ -65,7 +65,7 @@
 - [x] 4 cartes : Création de sites web / Maintenance & évolution / Automatisation métier / Intégrations & outils
 - [x] Composant `ServiceCard.astro` créé
 - [x] Décliné EN + ES
-- [ ] Lien vers pages `/services/*` (Phase 2 non créée)
+- [x] Lien vers pages `/fr/services/*` (Phase 2 ✅)
 
 ### Section "Pourquoi travailler avec moi" ✅
 - [x] 3 arguments : Compréhension métier / Intervention rapide / Solutions durables
@@ -79,63 +79,56 @@
 - [ ] Reformuler chaque projet en angle business (problème → solution → résultat)
 - [ ] Ajouter disclaimer "expérimentations perso"
 
-### Section Contact ⚠️ (partiel)
+### Section Contact ✅
+
 - [x] Email `paul.sebas.freelance@free.fr` + GitHub
-- [ ] Composant `ContactForm.astro` (Formspree — remplacer le mailto pur)
-- [ ] CTA fort "Réponse sous 24h" intégré au formulaire
+- [x] Composant `ContactForm.astro` (Formspree — prop `formId` à configurer)
+- [x] TrustIndicators "Réponse sous 24h" au-dessus du formulaire
 
 ---
 
-## Phase 2 — Architecture SEO (pages services) ❌
+## Phase 2 — Architecture SEO (pages services) ✅
 
 > Objectif : capter les clients en phase d'achat via Google.
 
-### Créer `src/pages/fr/services/`
+- [x] `creation-site-vitrine.astro`
+- [x] `maintenance-site-web.astro`
+- [x] `correction-bugs.astro`
+- [x] `automatisation-pme.astro`
+- [x] `integration-api-crm.astro` (angle facturation électronique 2026 intégré)
+- [x] `developpement-sur-mesure.astro`
+- [x] `reprise-projet-web.astro`
+- [x] `src/layouts/ServiceLayout.astro` (layout réutilisable)
+- [x] `ServiceCard.astro` — prop `href` optionnel ajouté
 
-- [ ] `creation-site-vitrine.astro`
-- [ ] `maintenance-site-web.astro`
-- [ ] `correction-bugs.astro`
-- [ ] `automatisation-pme.astro`
-- [ ] `integration-api-crm.astro`
-- [ ] `developpement-sur-mesure.astro`
-- [ ] `reprise-projet-web.astro`
-
-**Structure de chaque page :** problème métier → solution → bénéfices → process → CTA  
-**EN + ES** : à décliner en phase 3 (FR prioritaire)
+**EN + ES** : à décliner en Phase 3 ultérieure (FR prioritaire)
 
 ---
 
-## Phase 3 — SEO Local (zones géographiques) ❌
+## Phase 3 — SEO Local (zones géographiques) ✅
 
 > Avantage concurrentiel fort : connexion Antilles françaises + France.
 
-### Créer `src/pages/fr/zones/`
-
-- [ ] `france.astro`
-- [ ] `martinique.astro`
-- [ ] `guadeloupe.astro`
-- [ ] `guyane.astro`
-- [ ] `saint-martin.astro`
-- [ ] `saint-barthelemy.astro`
-- [ ] `antilles.astro` (agrégateur SEO)
-
-**Contenu** : contexte économique local, besoins PME/tourisme, CTA fort  
-**Mots-clés ciblés** : "développeur web Martinique", "création site Guadeloupe", etc.
+- [x] `france.astro` — remote-first, toutes PME françaises
+- [x] `martinique.astro` — tourisme, commerce, artisanat créole
+- [x] `guadeloupe.astro` — multi-îles, agriculture, tourisme
+- [x] `guyane.astro` — spatial, industrie, croissance DOM
+- [x] `saint-martin.astro` — bilingue FR/EN, tourisme insulaire
+- [x] `saint-barthelemy.astro` — luxe premium, clientèle internationale
+- [x] `antilles.astro` — agrégateur SEO (avantage concurrentiel clé)
+- [x] `src/layouts/ZoneLayout.astro` (layout réutilisable zones)
 
 ---
 
-## Phase 4 — SEO Sectoriel (pages secteurs) ❌
+## Phase 4 — SEO Sectoriel (pages secteurs) ✅
 
-### Créer `src/pages/fr/secteurs/`
-
-- [ ] `artisans.astro`
-- [ ] `pme.astro`
-- [ ] `associations.astro`
-- [ ] `tourisme.astro`
-- [ ] `independants.astro`
-- [ ] `commerces-locaux.astro`
-
-**Angle** : problème métier spécifique → solution adaptée (pas de jargon dev)
+- [x] `artisans.astro` — site vitrine + devis, galerie travaux
+- [x] `pme.astro` — automatisation, facturation 2026, intégrations
+- [x] `associations.astro` — adhésion, dons, événements, budget adapté
+- [x] `tourisme.astro` — bilingue FR/EN, réservation directe, OTA
+- [x] `independants.astro` — personal branding, portfolio, RDV
+- [x] `commerces-locaux.astro` — click & collect, Google Maps, fidélisation
+- [x] `src/layouts/SectorLayout.astro` (layout réutilisable secteurs)
 
 ---
 
@@ -289,13 +282,15 @@
 ## Ordre d'exécution recommandé
 
 ```text
-✅ Phase 0 (branding) → ✅ Phase 1 (homepage)
-    → Phase 7 partiel (ContactForm + CTASection)
-    → Phase 2 (services FR) + Phase 8 (SEO tech)
-    → Phase 9 (déploiement Vercel + domaine)
-    → Phase 10 (Malt + agences) — PREMIER CLIENT CIBLE J60
-    → Phase 3 (zones) → Phase 4 (secteurs) → Phase 5 (blog)
-    → Phase 6 (case studies) → Phase 10 (LinkedIn activation J60+)
+✅ Phase 0 (branding) → ✅ Phase 1 (homepage) → ✅ Phase 7 (composants)
+→ �� Phase 2 (7 services FR) → ✅ Phase 8 (SEO tech) → ✅ Phase 3 (7 zones)
+→ ✅ Phase 9 prep code (Vercel config)
+→ ✅ Phase 4 (6 secteurs) → Phase 5 (blog) → Phase 6 (case studies)
+→ Phase 9 déploiement réel (domaine à choisir)
+→ Phase 10 (Malt + agences) — PREMIER CLIENT CIBLE J60
+→ Phase 10 (LinkedIn activation J60+)
+
+Build actuel : 30 pages statiques
 ```
 
 ---
