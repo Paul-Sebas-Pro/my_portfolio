@@ -132,22 +132,23 @@
 
 ---
 
-## Phase 5 — Blog SEO (acquisition froide) ❌
+## Phase 5 — Blog SEO (acquisition froide) ✅
 
-### Créer `src/content/blog/` + `src/pages/fr/blog/`
+### `src/content/blog/` + `src/pages/fr/blog/`
 
-- [ ] Architecture Content Layer (collection `blog` dans `src/content.config.ts`)
-- [ ] Page liste `src/pages/fr/blog/index.astro`
-- [ ] Page article `src/pages/fr/blog/[slug].astro`
+- [x] Collection `blog` dans `src/content.config.ts` (import `z` depuis `astro/zod`)
+- [x] `src/layouts/BlogLayout.astro` (layout articles : header, prose, CTA)
+- [x] Page liste `src/pages/fr/blog/index.astro` (grille 2 col, tri par date)
+- [x] Page article `src/pages/fr/blog/[slug].astro` (getStaticPaths + render)
 
-### Articles prioritaires (Semaine 1-2)
+### Articles prioritaires ✅
 
-- [ ] combien-coute-site-vitrine-2026.md
-- [ ] maintenance-site-web-entreprise.md
-- [ ] pourquoi-site-ne-convertit-pas.md
-- [ ] developpeur-web-martinique-freelance.md
+- [x] `combien-coute-site-vitrine-2026.md` — tarifs, fourchettes marché, signaux d'alarme
+- [x] `maintenance-site-web-entreprise.md` — sécurité, performance, modèles de contrat
+- [x] `pourquoi-site-ne-convertit-pas.md` — 7 raisons, diagnostic, CTA
+- [x] `developpeur-web-martinique-freelance.md` — local vs remote, évaluation, pièges
 
-### Articles phase 2
+### Articles phase 2 ❌ (à rédiger)
 
 - [ ] automatisation-pme-simple.md
 - [ ] site-vitrine-artisan.md
@@ -285,12 +286,12 @@
 ✅ Phase 0 (branding) → ✅ Phase 1 (homepage) → ✅ Phase 7 (composants)
 → �� Phase 2 (7 services FR) → ✅ Phase 8 (SEO tech) → ✅ Phase 3 (7 zones)
 → ✅ Phase 9 prep code (Vercel config)
-→ ✅ Phase 4 (6 secteurs) → Phase 5 (blog) → Phase 6 (case studies)
+→ ✅ Phase 4 (6 secteurs) → ✅ Phase 5 (blog, 4 articles) → Phase 6 (case studies)
 → Phase 9 déploiement réel (domaine à choisir)
 → Phase 10 (Malt + agences) — PREMIER CLIENT CIBLE J60
 → Phase 10 (LinkedIn activation J60+)
 
-Build actuel : 30 pages statiques
+Build actuel : 41 pages statiques
 ```
 
 ---

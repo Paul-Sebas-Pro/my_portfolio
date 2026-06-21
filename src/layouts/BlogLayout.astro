@@ -1,0 +1,82 @@
+---
+import MainLayout from "./MainLayout.astro";
+import CTASection from "../components/CTASection.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  category: string;
+  readTime: number;
+  lang?: "fr" | "en" | "es";
+}
+
+const { title, description, pubDate, category, readTime, lang = "fr" } = Astro.props;
+
+const dateFormatted = pubDate.toLocaleDateString(
+  lang === "fr" ? "fr-FR" : lang === "en" ? "en-US" : "es-ES",
+  { year: "numeric", month: "long", day: "numeric" }
+);
+---
+
+<MainLayout title={title} lang={lang} description={description}>
+  <article class="max-w-4xl mx-auto px-6 pt-32 pb-20">
+    <nav class="text-sm text-slate-500 mb-8">
+      <a href={`/${lang}/`} class="hover:text-slate-300 transition-colors">Accueil</a>
+      <span class="mx-2">›</span>
+      <a href={`/${lang}/blog/`} class="hover:text-slate-300 transition-colors">Blog</a>
+      <span class="mx-2">›</span>
+      <span class="text-slate-400">{title}</span>
+    </nav>
+
+    <header class="mb-12">
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        <span class="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-xs font-semibold uppercase tracking-wider">
+          {category}
+        </span>
+        <span class="text-slate-500 text-sm">{dateFormatted}</span>
+        <span class="text-slate-700">·</span>
+        <span class="text-slate-500 text-sm">{readTime} min de lecture</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-50 leading-tight mb-6">
+        {title}
+      </h1>
+      <p class="text-xl text-slate-400 leading-relaxed border-l-4 border-blue-500/40 pl-4">
+        {description}
+      </p>
+    </header>
+
+    <div
+      class="prose prose-invert prose-blue max-w-none
+        prose-h2:text-2xl prose-h2:font-bold prose-h2:text-slate-100 prose-h2:mt-12 prose-h2:mb-4
+        prose-h3:text-xl prose-h3:font-semibold prose-h3:text-slate-200 prose-h3:mt-8 prose-h3:mb-3
+        prose-p:text-slate-400 prose-p:leading-relaxed prose-p:mb-5
+        prose-li:text-slate-400 prose-ul:my-4 prose-ol:my-4
+        prose-strong:text-slate-200 prose-strong:font-semibold
+        prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
+        prose-blockquote:border-l-4 prose-blockquote:border-blue-500/50
+        prose-blockquote:bg-blue-500/10 prose-blockquote:rounded-r-xl
+        prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:not-italic
+        prose-blockquote:text-slate-300"
+    >
+      <slot />
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-slate-800">
+      <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors">
+        ← Retour au blog
+      </a>
+    </div>
+  </article>
+
+  <div class="max-w-4xl mx-auto px-6 pb-20">
+    <CTASection
+      title="Un projet numérique pour votre entreprise ?"
+      subtitle="Discutons de vos besoins. Réponse sous 24h, sans engagement."
+      primaryLabel="Démarrer un projet"
+      primaryHref={`/${lang}/#contact`}
+      secondaryLabel="Voir mes services"
+      secondaryHref={`/${lang}/#services`}
+    />
+  </div>
+</MainLayout>

@@ -1,0 +1,78 @@
+---
+import MainLayout from "../../../layouts/MainLayout.astro";
+import CTASection from "../../../components/CTASection.astro";
+import { getCollection } from "astro:content";
+
+const lang = "fr";
+const posts = await getCollection("blog", ({ id }) => id.startsWith("fr/"));
+const sortedPosts = posts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<MainLayout
+  title="Blog — Conseils web pour PME"
+  lang={lang}
+  description="Conseils pratiques sur la création de sites web, la maintenance, l'automatisation et le digital pour PME et acteurs locaux des Antilles et de France."
+>
+  <main class="max-w-5xl mx-auto px-6 pt-32 pb-20">
+    <nav class="text-sm text-slate-500 mb-8">
+      <a href="/fr/" class="hover:text-slate-300 transition-colors">Accueil</a>
+      <span class="mx-2">›</span>
+      <span class="text-slate-400">Blog</span>
+    </nav>
+
+    <header class="mb-16">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-50 mb-4">
+        Blog & conseils
+      </h1>
+      <p class="text-xl text-slate-400 max-w-2xl leading-relaxed">
+        Ressources pratiques pour les PME, artisans et indépendants qui veulent tirer le meilleur de leur présence web.
+      </p>
+    </header>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {
+        sortedPosts.map((post) => {
+          const slug = post.id.replace("fr/", "").replace(".md", "");
+          const dateFormatted = post.data.pubDate.toLocaleDateString("fr-FR", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          });
+          return (
+            <a
+              href={`/fr/blog/${slug}/`}
+              class="group block p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 hover:bg-slate-800/50 transition-all duration-200"
+            >
+              <div class="flex items-center gap-3 mb-3">
+                <span class="px-2.5 py-0.5 bg-blue-500/20 border border-blue-500/30 rounded-full text-blue-400 text-xs font-semibold">
+                  {post.data.category}
+                </span>
+                <span class="text-slate-600 text-xs">{post.data.readTime} min de lecture</span>
+              </div>
+              <h2 class="text-lg font-bold text-slate-100 group-hover:text-blue-400 transition-colors mb-2 leading-snug">
+                {post.data.title}
+              </h2>
+              <p class="text-slate-400 text-sm leading-relaxed line-clamp-3 mb-4">
+                {post.data.description}
+              </p>
+              <span class="text-slate-600 text-xs">{dateFormatted}</span>
+            </a>
+          );
+        })
+      }
+    </div>
+
+    <div class="mt-20">
+      <CTASection
+        title="Un projet pour votre entreprise ?"
+        subtitle="Parlons-en. Réponse sous 24h, sans engagement."
+        primaryLabel="Démarrer un projet"
+        primaryHref="/fr/#contact"
+        secondaryLabel="Voir mes services"
+        secondaryHref="/fr/#services"
+      />
+    </div>
+  </main>
+</MainLayout>
