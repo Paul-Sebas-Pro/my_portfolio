@@ -25,21 +25,25 @@ const services = [
     icon: "🌐",
     title: t["services.web.title"],
     description: t["services.web.desc"],
+    href: "/fr/services/creation-site-vitrine/",
   },
   {
     icon: "🔧",
     title: t["services.maintenance.title"],
     description: t["services.maintenance.desc"],
+    href: "/fr/services/maintenance-site-web/",
   },
   {
     icon: "⚡",
     title: t["services.automation.title"],
     description: t["services.automation.desc"],
+    href: "/fr/services/automatisation-pme/",
   },
   {
     icon: "🔗",
     title: t["services.integration.title"],
     description: t["services.integration.desc"],
+    href: "/fr/services/integration-api-crm/",
   },
 ];
 
@@ -122,6 +126,7 @@ const trustItems = [
               title={s.title}
               description={s.description}
               icon={s.icon}
+              href={s.href}
             />
           ))
         }
