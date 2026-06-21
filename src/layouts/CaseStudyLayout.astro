@@ -1,0 +1,123 @@
+---
+import MainLayout from "./MainLayout.astro";
+import CTASection from "../components/CTASection.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  clientType: string;
+  sector: string;
+  duration: string;
+  results: string[];
+  stack: string[];
+  pubDate: Date;
+  lang?: "fr" | "en" | "es";
+}
+
+const { title, description, clientType, sector, duration, results, stack, pubDate, lang = "fr" } = Astro.props;
+
+const dateFormatted = pubDate.toLocaleDateString("fr-FR", {
+  year: "numeric",
+  month: "long",
+});
+---
+
+<MainLayout title={title} lang={lang} description={description}>
+  <article class="max-w-4xl mx-auto px-6 pt-32 pb-20">
+    <nav class="text-sm text-slate-500 mb-8">
+      <a href={`/${lang}/`} class="hover:text-slate-300 transition-colors">Accueil</a>
+      <span class="mx-2">›</span>
+      <a href={`/${lang}/case-studies/`} class="hover:text-slate-300 transition-colors">Réalisations</a>
+      <span class="mx-2">›</span>
+      <span class="text-slate-400">{title}</span>
+    </nav>
+
+    <header class="mb-10">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-50 leading-tight mb-4">
+        {title}
+      </h1>
+      <p class="text-xl text-slate-400 leading-relaxed mb-8">{description}</p>
+
+      <div class="flex flex-wrap gap-4 p-5 rounded-xl bg-slate-900 border border-slate-800">
+        <div>
+          <p class="text-xs text-slate-500 uppercase tracking-wider mb-1">Type de client</p>
+          <p class="text-slate-200 font-medium text-sm">{clientType}</p>
+        </div>
+        <div class="w-px bg-slate-800 hidden sm:block"></div>
+        <div>
+          <p class="text-xs text-slate-500 uppercase tracking-wider mb-1">Secteur</p>
+          <p class="text-slate-200 font-medium text-sm">{sector}</p>
+        </div>
+        <div class="w-px bg-slate-800 hidden sm:block"></div>
+        <div>
+          <p class="text-xs text-slate-500 uppercase tracking-wider mb-1">Durée</p>
+          <p class="text-slate-200 font-medium text-sm">{duration}</p>
+        </div>
+        <div class="w-px bg-slate-800 hidden sm:block"></div>
+        <div>
+          <p class="text-xs text-slate-500 uppercase tracking-wider mb-1">Date</p>
+          <p class="text-slate-200 font-medium text-sm">{dateFormatted}</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="mb-10">
+      <h2 class="text-xs text-slate-500 uppercase tracking-widest mb-4">Résultats clés</h2>
+      <div class="grid sm:grid-cols-2 gap-3">
+        {
+          results.map((result) => (
+            <div class="flex items-start gap-3 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
+              <span class="text-emerald-400 font-bold mt-0.5">✓</span>
+              <span class="text-emerald-300 font-medium text-sm">{result}</span>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <div
+      class="prose prose-invert prose-blue max-w-none
+        prose-h2:text-2xl prose-h2:font-bold prose-h2:text-slate-100 prose-h2:mt-10 prose-h2:mb-4
+        prose-h3:text-xl prose-h3:font-semibold prose-h3:text-slate-200 prose-h3:mt-7 prose-h3:mb-3
+        prose-p:text-slate-400 prose-p:leading-relaxed prose-p:mb-5
+        prose-li:text-slate-400 prose-ul:my-4
+        prose-strong:text-slate-200
+        prose-blockquote:border-l-4 prose-blockquote:border-blue-500/50
+        prose-blockquote:bg-blue-500/10 prose-blockquote:rounded-r-xl
+        prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:not-italic
+        prose-blockquote:text-slate-300"
+    >
+      <slot />
+    </div>
+
+    <section class="mt-12 pt-8 border-t border-slate-800">
+      <h2 class="text-xs text-slate-500 uppercase tracking-widest mb-4">Stack utilisée</h2>
+      <div class="flex flex-wrap gap-2">
+        {
+          stack.map((tech) => (
+            <span class="px-3 py-1.5 bg-slate-800 border border-slate-700 rounded-full text-slate-300 text-sm">
+              {tech}
+            </span>
+          ))
+        }
+      </div>
+    </section>
+
+    <div class="mt-12 pt-8 border-t border-slate-800">
+      <a href={`/${lang}/case-studies/`} class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors">
+        ← Toutes les réalisations
+      </a>
+    </div>
+  </article>
+
+  <div class="max-w-4xl mx-auto px-6 pb-20">
+    <CTASection
+      title="Un projet similaire pour votre entreprise ?"
+      subtitle="Discutons de vos besoins. Réponse sous 24h, sans engagement."
+      primaryLabel="Démarrer un projet"
+      primaryHref={`/${lang}/#contact`}
+      secondaryLabel="Voir mes services"
+      secondaryHref={`/${lang}/#services`}
+    />
+  </div>
+</MainLayout>

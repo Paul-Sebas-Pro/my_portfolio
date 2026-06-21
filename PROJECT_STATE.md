@@ -157,18 +157,19 @@
 
 ---
 
-## Phase 6 — Case Studies (contenu business) ❌
+## Phase 6 — Case Studies (contenu business) ✅
 
 > Complémentaire aux projets techniques existants — pour l'audience PME.
 
-### Créer `src/content/case-studies/`
+- [x] Collection `caseStudies` dans `src/content.config.ts`
+- [x] `src/layouts/CaseStudyLayout.astro` (metadata, résultats clés, stack badges)
+- [x] `src/pages/fr/case-studies/index.astro` + `[slug].astro`
+- [x] `refonte-site-artisan.md` — électricien Martinique, +40% devis, score 38→91
+- [x] `automatisation-facturation-pme.md` — 8h/semaine éliminées, ROI < 1 mois
+- [x] `correction-bug-production.md` — webhooks Stripe silencieux, corrigé en 24h
+- [x] `integration-crm-site.md` — leads → HubSpot auto, délai contact -52%
 
-- [ ] `refonte-site-artisan.md` (fictif si pas de client encore)
-- [ ] `automatisation-facturation-pme.md`
-- [ ] `correction-bug-production.md`
-- [ ] `integration-crm-site.md`
-
-**Structure** : contexte → problème → solution → résultat → stack (en bas)
+**Structure appliquée** : contexte → problème → solution → résultat → stack
 
 ---
 
@@ -286,12 +287,12 @@
 ✅ Phase 0 (branding) → ✅ Phase 1 (homepage) → ✅ Phase 7 (composants)
 → �� Phase 2 (7 services FR) → ✅ Phase 8 (SEO tech) → ✅ Phase 3 (7 zones)
 → ✅ Phase 9 prep code (Vercel config)
-→ ✅ Phase 4 (6 secteurs) → ✅ Phase 5 (blog, 4 articles) → Phase 6 (case studies)
+→ ✅ Phase 4 (6 secteurs) → ✅ Phase 5 (blog, 4 articles) → ✅ Phase 6 (4 case studies)
 → Phase 9 déploiement réel (domaine à choisir)
 → Phase 10 (Malt + agences) — PREMIER CLIENT CIBLE J60
 → Phase 10 (LinkedIn activation J60+)
 
-Build actuel : 41 pages statiques
+Build actuel : 46 pages statiques
 ```
 
 ---

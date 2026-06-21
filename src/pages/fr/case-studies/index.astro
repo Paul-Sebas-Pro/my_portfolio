@@ -1,0 +1,79 @@
+---
+import MainLayout from "../../../layouts/MainLayout.astro";
+import CTASection from "../../../components/CTASection.astro";
+import { getCollection } from "astro:content";
+
+const lang = "fr";
+const studies = await getCollection("caseStudies", ({ id }) => id.startsWith("fr/"));
+const sortedStudies = studies.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<MainLayout
+  title="Réalisations — Études de cas clients"
+  lang={lang}
+  description="Études de cas concrets : refonte de site artisan, automatisation PME, correction de bugs, intégration CRM. Résultats mesurables pour chaque projet."
+>
+  <main class="max-w-5xl mx-auto px-6 pt-32 pb-20">
+    <nav class="text-sm text-slate-500 mb-8">
+      <a href="/fr/" class="hover:text-slate-300 transition-colors">Accueil</a>
+      <span class="mx-2">›</span>
+      <span class="text-slate-400">Réalisations</span>
+    </nav>
+
+    <header class="mb-16">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-50 mb-4">
+        Réalisations
+      </h1>
+      <p class="text-xl text-slate-400 max-w-2xl leading-relaxed">
+        Contexte, problème, solution, résultats. Des projets concrets pour des entreprises concrètes.
+      </p>
+    </header>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {
+        sortedStudies.map((study) => {
+          const slug = study.id.replace("fr/", "").replace(".md", "");
+          return (
+            <a
+              href={`/fr/case-studies/${slug}/`}
+              class="group block p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-blue-500/40 hover:bg-slate-800/50 transition-all duration-200"
+            >
+              <div class="flex flex-wrap items-center gap-2 mb-3">
+                <span class="px-2.5 py-0.5 bg-slate-800 border border-slate-700 rounded-full text-slate-400 text-xs">
+                  {study.data.sector}
+                </span>
+                <span class="text-slate-600 text-xs">{study.data.duration}</span>
+              </div>
+              <h2 class="text-lg font-bold text-slate-100 group-hover:text-blue-400 transition-colors mb-2 leading-snug">
+                {study.data.title}
+              </h2>
+              <p class="text-slate-400 text-sm leading-relaxed line-clamp-2 mb-4">
+                {study.data.description}
+              </p>
+              <div class="space-y-1">
+                {study.data.results.slice(0, 2).map((r) => (
+                  <p class="text-emerald-400 text-xs font-medium flex items-start gap-1.5">
+                    <span class="mt-0.5">✓</span>{r}
+                  </p>
+                ))}
+              </div>
+            </a>
+          );
+        })
+      }
+    </div>
+
+    <div class="mt-20">
+      <CTASection
+        title="Votre projet mérite le même soin."
+        subtitle="Discutons-en. Réponse sous 24h, sans engagement."
+        primaryLabel="Démarrer un projet"
+        primaryHref="/fr/#contact"
+        secondaryLabel="Voir mes services"
+        secondaryHref="/fr/#services"
+      />
+    </div>
+  </main>
+</MainLayout>

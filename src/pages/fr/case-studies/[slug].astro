@@ -1,0 +1,29 @@
+---
+import CaseStudyLayout from "../../../layouts/CaseStudyLayout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const studies = await getCollection("caseStudies", ({ id }) => id.startsWith("fr/"));
+  return studies.map((study) => ({
+    params: { slug: study.id.replace("fr/", "").replace(".md", "") },
+    props: { study },
+  }));
+}
+
+const { study } = Astro.props;
+const { Content } = await render(study);
+---
+
+<CaseStudyLayout
+  title={study.data.title}
+  description={study.data.description}
+  clientType={study.data.clientType}
+  sector={study.data.sector}
+  duration={study.data.duration}
+  results={study.data.results}
+  stack={study.data.stack}
+  pubDate={study.data.pubDate}
+  lang="fr"
+>
+  <Content />
+</CaseStudyLayout>
