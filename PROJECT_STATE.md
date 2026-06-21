@@ -191,19 +191,29 @@
 
 ---
 
-## Phase 8 — SEO Technique ❌
+## Phase 8 — SEO Technique ✅ (partiel)
 
-- [ ] Sitemap XML automatique (`@astrojs/sitemap` — intégration native Astro)
-- [ ] `public/robots.txt`
-- [ ] Image OG par défaut (`public/og-default.png`, 1200×630)
-- [ ] Schema.org `LocalBusiness` + `Person` dans MainLayout
-- [ ] Canonical tag sur toutes les pages
-- [ ] Balises hreflang FR/EN/ES (i18n SEO)
-- [ ] Google Search Console après déploiement
+- [x] Sitemap XML automatique — `@astrojs/sitemap` 3.7.3 (16 URLs, `sitemap-index.xml`)
+- [x] `public/robots.txt` — `Allow: /` + pointeur sitemap
+- [x] Schema.org `Person` JSON-LD dans MainLayout (jobTitle FR/EN/ES)
+- [x] Canonical tag sur toutes les pages
+- [x] Balises hreflang FR/EN/ES + x-default
+- [x] OG meta : `og:url`, `og:image` (1200×630), `twitter:card` large
+- [x] Meta descriptions refondues (axe PME, non dev-portfolio)
+- [ ] Image OG par défaut (`public/og-default.png`, 1200×630) — **à créer manuellement** (PNG requis, pas SVG)
+- [ ] `site:` dans `astro.config.mjs` = `https://paul-sebas.dev` — **à mettre à jour** avec le vrai domaine (Phase 9)
+- [ ] Google Search Console — après déploiement (Phase 9)
 
 ---
 
 ## Phase 9 — Déploiement Vercel ❌
+
+### ⚠️ Pré-requis avant déploiement — Formspree
+
+- [ ] Créer compte sur formspree.io (gratuit)
+- [ ] Créer un formulaire → copier l'ID (ex: `xpzgkqar`)
+- [ ] Dans chaque `<ContactForm>`, passer `formId="xpzgkqar"` (`src/pages/{fr,en,es}/index.astro`)
+- [ ] Fichier à modifier : `src/components/ContactForm.astro` ligne 8 (prop `formId`)
 
 - [ ] Choisir nom de domaine (budget 10-15€/an max)
   - Option A : `paul-sebas.dev`

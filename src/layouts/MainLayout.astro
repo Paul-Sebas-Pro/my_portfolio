@@ -14,10 +14,33 @@ const t = ui[lang as keyof typeof ui];
 const metaDescription =
   description ??
   (lang === "fr"
-    ? "Portfolio de Paul Sebas — Développeur Full-Stack avec 20 ans d'expertise IT. React, Svelte, Vue, Node.js, Docker."
+    ? "Développeur Full-Stack freelance — sites web, automatisation et intégrations sur mesure pour PME et acteurs locaux. Réponse sous 24h."
     : lang === "en"
-      ? "Paul Sebas portfolio — Full-Stack Developer with 20 years of IT expertise. React, Svelte, Vue, Node.js, Docker."
-      : "Portfolio de Paul Sebas — Desarrollador Full-Stack con 20 años de experiencia IT. React, Svelte, Vue, Node.js, Docker.");
+      ? "Freelance Full-Stack Developer — custom websites, automation and integrations for SMEs. Response within 24h."
+      : "Desarrollador Full-Stack freelance — sitios web, automatización e integraciones a medida para pymes. Respuesta en 24h.");
+
+const siteUrl = (Astro.site?.toString() ?? "https://paul-sebas.dev").replace(/\/$/, "");
+const currentPath = Astro.url.pathname;
+const pathWithoutLang = currentPath.replace(/^\/(fr|en|es)/, "") || "/";
+const canonicalUrl = `${siteUrl}${currentPath}`;
+const hreflangUrls = {
+  fr: `${siteUrl}/fr${pathWithoutLang === "/" ? "/" : pathWithoutLang}`,
+  en: `${siteUrl}/en${pathWithoutLang === "/" ? "/" : pathWithoutLang}`,
+  es: `${siteUrl}/es${pathWithoutLang === "/" ? "/" : pathWithoutLang}`,
+};
+
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Paul Sebas",
+  jobTitle: lang === "fr" ? "Développeur Full-Stack Freelance" : lang === "en" ? "Freelance Full-Stack Developer" : "Desarrollador Full-Stack Freelance",
+  email: "paul.sebas.freelance@free.fr",
+  url: `${siteUrl}/${lang}/`,
+  sameAs: [
+    "https://www.linkedin.com/in/paul-sebas-pro",
+    "https://github.com/Paul-Sebas-Pro",
+  ],
+};
 ---
 
 <html lang={lang} class="scroll-smooth">
@@ -33,19 +56,24 @@ const metaDescription =
     <meta name="generator" content={Astro.generator} />
     <title>{title} | Paul Sebas — Dev Full-Stack</title>
     <meta name="description" content={metaDescription} />
-    <meta
-      property="og:title"
-      content={`${title} | Paul Sebas — Dev Full-Stack`}
-    />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="fr" href={hreflangUrls.fr} />
+    <link rel="alternate" hreflang="en" href={hreflangUrls.en} />
+    <link rel="alternate" hreflang="es" href={hreflangUrls.es} />
+    <link rel="alternate" hreflang="x-default" href={hreflangUrls.fr} />
+    <meta property="og:title" content={`${title} | Paul Sebas — Dev Full-Stack`} />
     <meta property="og:description" content={metaDescription} />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:locale"
-      content={lang === "fr" ? "fr_FR" : lang === "en" ? "en_US" : "es_ES"}
-    />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={`${siteUrl}/og-default.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={lang === "fr" ? "fr_FR" : lang === "en" ? "en_US" : "es_ES"} />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={`${title} | Paul Sebas`} />
     <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={`${siteUrl}/og-default.png`} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
   </head>
   <body class="bg-slate-950 text-slate-50 antialiased selection:bg-blue-500/30">
     <nav
