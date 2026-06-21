@@ -206,23 +206,42 @@
 
 ---
 
-## Phase 9 — Déploiement Vercel ❌
+## Phase 9 — Déploiement Vercel ⚠️ (prep code ✅ — actions manuelles restantes)
 
-### ⚠️ Pré-requis avant déploiement — Formspree
+### ✅ Préparation technique (code, fait)
 
-- [ ] Créer compte sur formspree.io (gratuit)
-- [ ] Créer un formulaire → copier l'ID (ex: `xpzgkqar`)
-- [ ] Dans chaque `<ContactForm>`, passer `formId="xpzgkqar"` (`src/pages/{fr,en,es}/index.astro`)
-- [ ] Fichier à modifier : `src/components/ContactForm.astro` ligne 8 (prop `formId`)
+- [x] `vercel.json` — `framework:astro`, `buildCommand`, `outputDirectory:dist`, `installCommand:pnpm install`, redirect `/` → `/fr/` permanent (301)
+- [x] `.node-version` — `24` (Vercel lit ce fichier)
+- [x] `package.json` — `engines.node: ">=24"`
+- [x] `astro.config.mjs` — `site: "https://paul-sebas.dev"` (placeholder — à mettre à jour avec le vrai domaine)
 
-- [ ] Choisir nom de domaine (budget 10-15€/an max)
-  - Option A : `paul-sebas.dev`
-  - Option B : `paul-sebas-pro.dev`
-  - Option C : nom-service (ex: `artisanweb.fr` — si positionnement niche)
-- [ ] Connecter repo GitHub à Vercel (build : `pnpm run build` / output : `dist` / Node : **24**)
-- [ ] Configurer domaine custom dans Vercel
-- [ ] Tester les 16 routes statiques + redirections
-- [ ] Analytics : Umami (gratuit, RGPD) ou Vercel Analytics (gratuit tier)
+### ⚠️ Actions manuelles (dans l'ordre)
+
+1. **Domaine** — choisir et acheter (budget 10-15€/an)
+   - Option A : `paul-sebas.dev` ← recommandé (court, `.dev` = crédibilité tech)
+   - Option B : `paul-sebas-pro.dev`
+   - Option C : `artisanweb.fr` (niche PME — irréversible)
+
+2. **Mettre à jour le domaine dans le code** (après choix) :
+   - `astro.config.mjs` ligne 7 : `site: "https://DOMAINE_CHOISI"`
+   - `public/robots.txt` ligne 3 : `Sitemap: https://DOMAINE_CHOISI/sitemap-index.xml`
+
+3. **Vercel** — connecter GitHub :
+   - Aller sur vercel.com → New Project → importer `Paul-Sebas-Pro/my_portfolio`
+   - Build: `pnpm run build` | Output: `dist` | Node: **24** (auto-détecté via `.node-version`)
+   - Configurer domaine custom dans Vercel dashboard
+
+4. **Formspree** — activer le formulaire :
+   - formspree.io → créer formulaire → copier ID
+   - `src/pages/{fr,en,es}/index.astro` : ajouter `formId="VOTRE_ID"` sur `<ContactForm>`
+
+5. **OG image** — créer `public/og-default.png` (1200×630 PNG)
+   - Outil : Canva / export Figma / screenshot Pencil maquette
+
+6. **Post-déploiement** :
+   - [ ] Google Search Console — soumettre sitemap `https://DOMAINE/sitemap-index.xml`
+   - [ ] Analytics : Vercel Analytics (gratuit, 1 ligne) ou Umami (auto-hébergé, RGPD strict)
+   - [ ] Tester les 16 routes + redirect `/` → `/fr/`
 
 ---
 
