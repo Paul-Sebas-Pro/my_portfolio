@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #0B1220;
+      font-family: 'Inter', system-ui, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      width: 1200px;
+      height: 630px;
+      background: linear-gradient(135deg, #0B1220 0%, #111827 60%, #0f1e3a 100%);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 72px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, #1D4ED820 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .card::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, #0EA5E910 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .top {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0EA5E915;
+      border: 1px solid #0EA5E940;
+      border-radius: 20px;
+      padding: 6px 16px;
+      width: fit-content;
+    }
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      background: #0EA5E9;
+      border-radius: 50%;
+    }
+    .badge-text {
+      color: #0EA5E9;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    h1 {
+      font-size: 58px;
+      font-weight: 800;
+      color: #F8FAFC;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      max-width: 800px;
+    }
+    h1 span { color: #1D4ED8; }
+    .subtitle {
+      font-size: 22px;
+      color: #94A3B8;
+      max-width: 680px;
+      line-height: 1.5;
+    }
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      background: #111827;
+      border-radius: 10px;
+      border: 1px solid #1F2937;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .logo-mark img { width: 36px; height: 36px; }
+    .logo-text {
+      font-size: 22px;
+      font-weight: 700;
+      color: #F8FAFC;
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+    }
+    .logo-text span { color: #1D4ED8; }
+    .domain {
+      font-size: 18px;
+      color: #475569;
+      font-weight: 500;
+    }
+    .pills {
+      display: flex;
+      gap: 10px;
+    }
+    .pill {
+      background: #111827;
+      border: 1px solid #1F2937;
+      border-radius: 8px;
+      padding: 6px 14px;
+      color: #94A3B8;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.bunny.net" />
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:400,500,600,700,800|space-grotesk:500,700" />
+</head>
+<body>
+  <div class="card">
+    <div class="top">
+      <div class="badge">
+        <div class="badge-dot"></div>
+        <span class="badge-text">Développeur Full-Stack Freelance</span>
+      </div>
+      <h1>Paul<span>.</span>Sebas<br>— Dev Web PME</h1>
+      <p class="subtitle">Sites web, automatisation et intégrations sur mesure pour PME et acteurs locaux. Réponse sous 24h.</p>
+    </div>
+    <div class="bottom">
+      <div class="logo">
+        <div class="logo-mark">
+          <img src="/logo.svg" alt="" />
+        </div>
+        <span class="logo-text">Paul<span>.</span>Sebas</span>
+      </div>
+      <div class="pills">
+        <span class="pill">Martinique</span>
+        <span class="pill">Guadeloupe</span>
+        <span class="pill">France</span>
+      </div>
+      <span class="domain">paul-sebas.fr</span>
+    </div>
+  </div>
+</body>
+</html>

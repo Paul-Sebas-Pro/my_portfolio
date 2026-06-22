@@ -74,6 +74,7 @@ const schemaOrg = {
     <meta name="twitter:description" content={metaDescription} />
     <meta name="twitter:image" content={`${siteUrl}/og-default.png`} />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+    <script is:inline defer src="/_vercel/insights/script.js"></script>
   </head>
   <body class="bg-slate-950 text-slate-50 antialiased selection:bg-blue-500/30">
     <nav

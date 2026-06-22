@@ -195,8 +195,8 @@
 - [x] Balises hreflang FR/EN/ES + x-default
 - [x] OG meta : `og:url`, `og:image` (1200×630), `twitter:card` large
 - [x] Meta descriptions refondues (axe PME, non dev-portfolio)
-- [ ] Image OG par défaut (`public/og-default.png`, 1200×630) — **à créer manuellement** (PNG requis, pas SVG)
-- [ ] `site:` dans `astro.config.mjs` = `https://paul-sebas.dev` — **à mettre à jour** avec le vrai domaine (Phase 9)
+- [x] Image OG par défaut (`public/og-default.png`, 1200×630) ✅
+- [ ] `site:` dans `astro.config.mjs` = `https://paul-sebas.fr` — **à mettre à jour** avec le vrai domaine (Phase 9)
 - [ ] Google Search Console — après déploiement (Phase 9)
 
 ---
@@ -208,35 +208,28 @@
 - [x] `vercel.json` — `framework:astro`, `buildCommand`, `outputDirectory:dist`, `installCommand:pnpm install`, redirect `/` → `/fr/` permanent (301)
 - [x] `.node-version` — `24` (Vercel lit ce fichier)
 - [x] `package.json` — `engines.node: ">=24"`
-- [x] `astro.config.mjs` — `site: "https://paul-sebas.dev"` (placeholder — à mettre à jour avec le vrai domaine)
+- [x] `astro.config.mjs` — `site: "https://paul-sebas.fr"` ✅
+- [x] `public/robots.txt` — sitemap pointant vers `paul-sebas.fr` ✅
 
 ### ⚠️ Actions manuelles (dans l'ordre)
 
-1. **Domaine** — choisir et acheter (budget 10-15€/an)
-   - Option A : `paul-sebas.dev` ← recommandé (court, `.dev` = crédibilité tech)
-   - Option B : `paul-sebas-pro.dev`
-   - Option C : `artisanweb.fr` (niche PME — irréversible)
+1. **Domaine** — ✅ `paul-sebas.fr` acheté chez OVHCloud
 
-2. **Mettre à jour le domaine dans le code** (après choix) :
-   - `astro.config.mjs` ligne 7 : `site: "https://DOMAINE_CHOISI"`
-   - `public/robots.txt` ligne 3 : `Sitemap: https://DOMAINE_CHOISI/sitemap-index.xml`
-
-3. **Vercel** — connecter GitHub :
+2. **Vercel** — connecter GitHub :
    - Aller sur vercel.com → New Project → importer `Paul-Sebas-Pro/my_portfolio`
    - Build: `pnpm run build` | Output: `dist` | Node: **24** (auto-détecté via `.node-version`)
-   - Configurer domaine custom dans Vercel dashboard
+   - Configurer domaine custom dans Vercel dashboard (pointer DNS OVHCloud → Vercel)
 
-4. **Formspree** — activer le formulaire :
+3. **Formspree** — activer le formulaire :
    - formspree.io → créer formulaire → copier ID
    - `src/pages/{fr,en,es}/index.astro` : ajouter `formId="VOTRE_ID"` sur `<ContactForm>`
 
-5. **OG image** — créer `public/og-default.png` (1200×630 PNG)
-   - Outil : Canva / export Figma / screenshot Pencil maquette
+4. **OG image** — ✅ `public/og-default.png` 1200×630 PNG créée
 
-6. **Post-déploiement** :
-   - [ ] Google Search Console — soumettre sitemap `https://DOMAINE/sitemap-index.xml`
+5. **Post-déploiement** :
+   - [ ] Google Search Console — soumettre sitemap `https://paul-sebas.fr/sitemap-index.xml`
    - [ ] Analytics : Vercel Analytics (gratuit, 1 ligne) ou Umami (auto-hébergé, RGPD strict)
-   - [ ] Tester les 16 routes + redirect `/` → `/fr/`
+   - [ ] Tester les 46 routes + redirect `/` → `/fr/`
 
 ---
 

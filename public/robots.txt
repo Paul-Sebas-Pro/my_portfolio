@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://paul-sebas.dev/sitemap-index.xml
+Sitemap: https://paul-sebas.fr/sitemap-index.xml

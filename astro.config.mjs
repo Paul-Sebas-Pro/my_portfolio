@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://paul-sebas.dev",
+  site: "https://paul-sebas.fr",
   output: "static",
   integrations: [sitemap()],
   i18n: {
