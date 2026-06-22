@@ -95,15 +95,19 @@ const schemaOrg = {
         <div class="flex items-center gap-8">
           <ul class="hidden md:flex gap-6 text-sm font-medium text-slate-400">
             <li>
-              <a href="#projects" class="hover:text-white transition-colors"
-                >{t["nav.projects"]}</a>
+              <a href={`/${lang}/#services`} class="hover:text-white transition-colors"
+                >{t["nav.services"]}</a>
             </li>
             <li>
-              <a href="#about" class="hover:text-white transition-colors"
-                >{t["nav.about"]}</a>
+              <a href={`/${lang}/case-studies/`} class="hover:text-white transition-colors"
+                >{t["nav.realisations"]}</a>
             </li>
             <li>
-              <a href="#contact" class="hover:text-white transition-colors"
+              <a href={`/${lang}/blog/`} class="hover:text-white transition-colors"
+                >{t["nav.blog"]}</a>
+            </li>
+            <li>
+              <a href={`/${lang}/#contact`} class="hover:text-white transition-colors"
                 >{t["nav.contact"]}</a>
             </li>
           </ul>
@@ -146,27 +150,50 @@ const schemaOrg = {
 
     <slot />
 
-    <footer class="border-t border-slate-900 mt-20 py-10 bg-slate-950">
-      <div
-        class="max-w-5xl mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4"
-      >
-        <div class="flex items-center gap-2">
-          <img src="/logo.svg" alt="" aria-hidden="true" class="h-6 w-6 rounded opacity-60" />
-          <p class="text-slate-500 text-sm">© 2026 — {t["footer.madeWith"]}</p>
+    <footer class="border-t border-slate-800 mt-20 pt-12 pb-8 bg-slate-950">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+          <div>
+            <a href={`/${lang}/`} class="flex items-center gap-2 mb-4 hover:opacity-80 transition-opacity">
+              <img src="/logo.svg" alt="" aria-hidden="true" class="h-6 w-6 rounded opacity-70" />
+              <span class="font-bold text-sm text-slate-200">Paul<span class="text-blue-500">.</span>Sebas</span>
+            </a>
+            <p class="text-slate-500 text-xs leading-relaxed">Développeur Full-Stack freelance. PME et acteurs locaux.</p>
+          </div>
+          <div>
+            <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-3">Services</p>
+            <ul class="space-y-2">
+              <li><a href={`/${lang}/services/creation-site-vitrine/`} class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Création site vitrine</a></li>
+              <li><a href={`/${lang}/services/maintenance-site-web/`} class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Maintenance web</a></li>
+              <li><a href={`/${lang}/services/automatisation-pme/`} class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Automatisation PME</a></li>
+              <li><a href={`/${lang}/services/integration-api-crm/`} class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Intégration API / CRM</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-3">Contenu</p>
+            <ul class="space-y-2">
+              <li><a href={`/${lang}/case-studies/`} class="text-slate-500 hover:text-slate-300 text-sm transition-colors">{t["nav.realisations"]}</a></li>
+              <li><a href={`/${lang}/blog/`} class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Blog</a></li>
+              <li><a href={`/${lang}/#projects`} class="text-slate-500 hover:text-slate-300 text-sm transition-colors">{t["nav.projects"]}</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-3">Zones</p>
+            <ul class="space-y-2">
+              <li><a href={`/${lang}/zones/martinique/`} class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Martinique</a></li>
+              <li><a href={`/${lang}/zones/guadeloupe/`} class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Guadeloupe</a></li>
+              <li><a href={`/${lang}/zones/france/`} class="text-slate-500 hover:text-slate-300 text-sm transition-colors">France</a></li>
+              <li><a href={`/${lang}/zones/antilles/`} class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Antilles</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="flex gap-6">
-          <a
-            href="https://www.linkedin.com/in/paul-sebas-pro"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-slate-400 hover:text-white text-sm">LinkedIn</a
-          >
-          <a
-            href="https://github.com/Paul-Sebas-Pro"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-slate-400 hover:text-white text-sm">GitHub</a
-          >
+        <div class="border-t border-slate-900 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
+          <p class="text-slate-600 text-xs">© 2026 — {t["footer.madeWith"]}</p>
+          <div class="flex gap-5">
+            <a href="https://www.linkedin.com/in/paul-sebas-pro" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-white text-sm transition-colors">LinkedIn</a>
+            <a href="https://github.com/Paul-Sebas-Pro" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-white text-sm transition-colors">GitHub</a>
+            <a href={`/${lang}/#contact`} class="text-slate-500 hover:text-white text-sm transition-colors">{t["nav.contact"]}</a>
+          </div>
         </div>
       </div>
     </footer>
