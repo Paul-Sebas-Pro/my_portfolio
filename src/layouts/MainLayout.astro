@@ -84,9 +84,12 @@ const schemaOrg = {
       >
         <a
           href={`/${lang}`}
-          class="font-bold text-xl tracking-tighter hover:text-blue-400 transition-colors"
+          class="flex items-center gap-2.5 hover:opacity-80 transition-opacity"
         >
-          Paul<span class="text-blue-500">.</span>Sebas
+          <img src="/logo.svg" alt="" aria-hidden="true" class="h-8 w-8 rounded-lg" />
+          <span class="font-bold text-xl tracking-tighter">
+            Paul<span class="text-blue-500">.</span>Sebas
+          </span>
         </a>
 
         <div class="flex items-center gap-8">
@@ -147,9 +150,10 @@ const schemaOrg = {
       <div
         class="max-w-5xl mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4"
       >
-        <p class="text-slate-500 text-sm">
-          © 2026 — {t["footer.madeWith"]}
-        </p>
+        <div class="flex items-center gap-2">
+          <img src="/logo.svg" alt="" aria-hidden="true" class="h-6 w-6 rounded opacity-60" />
+          <p class="text-slate-500 text-sm">© 2026 — {t["footer.madeWith"]}</p>
+        </div>
         <div class="flex gap-6">
           <a
             href="https://www.linkedin.com/in/paul-sebas-pro"

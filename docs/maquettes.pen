@@ -27,14 +27,37 @@
           "alignItems": "center",
           "children": [
             {
-              "type": "text",
-              "id": "g2qUHx",
+              "type": "frame",
+              "id": "vVtA4",
               "name": "Logo",
-              "fill": "$text-primary",
-              "content": "Paul.Sebas",
-              "fontFamily": "$font-heading",
-              "fontSize": 18,
-              "fontWeight": "700"
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 6,
+                  "id": "P47ctg",
+                  "name": "LogoMark",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "../public/logo.svg",
+                    "mode": "stretch"
+                  },
+                  "width": 28,
+                  "height": 28
+                },
+                {
+                  "type": "text",
+                  "id": "Jl9ay",
+                  "name": "LogoText",
+                  "fill": "$text-primary",
+                  "content": "Paul.Sebas",
+                  "fontFamily": "$font-heading",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                }
+              ]
             },
             {
               "type": "frame",
@@ -941,14 +964,37 @@
           "alignItems": "center",
           "children": [
             {
-              "type": "text",
-              "id": "LuuSL",
+              "type": "frame",
+              "id": "KEHJz",
               "name": "Logo",
-              "fill": "$text-primary",
-              "content": "Paul.Sebas",
-              "fontFamily": "$font-heading",
-              "fontSize": 16,
-              "fontWeight": "700"
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 5,
+                  "id": "XChZn",
+                  "name": "LogoMark",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "../public/logo.svg",
+                    "mode": "stretch"
+                  },
+                  "width": 24,
+                  "height": 24
+                },
+                {
+                  "type": "text",
+                  "id": "U8nrY",
+                  "name": "LogoText",
+                  "fill": "$text-primary",
+                  "content": "Paul.Sebas",
+                  "fontFamily": "$font-heading",
+                  "fontSize": 16,
+                  "fontWeight": "700"
+                }
+              ]
             },
             {
               "type": "frame",
@@ -1570,14 +1616,38 @@
           "alignItems": "center",
           "children": [
             {
-              "type": "text",
-              "id": "KuyGy",
-              "name": "MFooterLogo",
-              "fill": "$text-primary",
-              "content": "Paul.Sebas",
-              "fontFamily": "$font-heading",
-              "fontSize": 16,
-              "fontWeight": "700"
+              "type": "frame",
+              "id": "gW1Nr",
+              "name": "LogoFooter",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 4,
+                  "id": "aPTzi",
+                  "name": "LogoMark",
+                  "opacity": 0.6,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "../public/logo.svg",
+                    "mode": "stretch"
+                  },
+                  "width": 20,
+                  "height": 20
+                },
+                {
+                  "type": "text",
+                  "id": "YBX1c",
+                  "name": "LogoText",
+                  "fill": "$text-primary",
+                  "content": "Paul.Sebas",
+                  "fontFamily": "$font-heading",
+                  "fontSize": 16,
+                  "fontWeight": "700"
+                }
+              ]
             },
             {
               "type": "text",
@@ -1619,14 +1689,37 @@
           "alignItems": "center",
           "children": [
             {
-              "type": "text",
-              "id": "U5mn1",
+              "type": "frame",
+              "id": "tQQpI",
               "name": "Logo",
-              "fill": "$text-primary",
-              "content": "Paul.Sebas",
-              "fontFamily": "$font-heading",
-              "fontSize": 18,
-              "fontWeight": "700"
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 6,
+                  "id": "Ndo2v",
+                  "name": "LogoMark",
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "../public/logo.svg",
+                    "mode": "stretch"
+                  },
+                  "width": 28,
+                  "height": 28
+                },
+                {
+                  "type": "text",
+                  "id": "tCgkr",
+                  "name": "LogoText",
+                  "fill": "$text-primary",
+                  "content": "Paul.Sebas",
+                  "fontFamily": "$font-heading",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                }
+              ]
             },
             {
               "type": "frame",
