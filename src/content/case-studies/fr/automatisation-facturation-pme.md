@@ -78,4 +78,4 @@ Tests sur un environnement de recette avec de vraies données (anonymisées) ava
 
 Les gains de productivité les plus rapides se trouvent souvent dans les tâches répétitives "entre deux outils". Avant d'investir dans un nouveau logiciel, vérifiez si vos outils existants peuvent communiquer — c'est souvent possible et beaucoup moins coûteux.
 
-La facturation électronique obligatoire au 1er septembre 2026 va accélérer l'adoption des API comptables. C'est le bon moment pour automatiser ces flux avant que ça devienne une obligation de conformité.
+La facturation électronique, obligatoire à la réception depuis le 1er septembre 2026, accélère l'adoption des API comptables. C'est le bon moment pour automatiser ces flux et sécuriser sa conformité.

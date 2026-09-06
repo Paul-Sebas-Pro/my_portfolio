@@ -2,26 +2,41 @@
 
 > Objectif : transformer ce portfolio technique en machine d'acquisition clients PME.  
 > Cible : +1 000€/mois net via Malt + sous-traitance agences. Horizon 6-12 mois.  
-> Source audit : `docs/optimisation.md` | Source business : `1.BUSINESS/CLAUDE.md`
+> Source business : `/home/pablo/projects/pro/1.BUSINESS/` (roadmap, suivi, 3.ACQUISITION)
+
+---
+
+## Reprise septembre 2026
+
+Projet en pause de juin à septembre 2026, repris le 2026-09-06.
+- README réécrit, `package.json` complété (description, auteur, `private`)
+- Argument facturation électronique passé au présent sur toutes les pages FR
+  (services / secteurs / zones / case-study) — obligation à la réception en vigueur depuis le 1er sept. 2026
+- Build OK : 46 pages
+- `Testimonials.astro` : composant prêt mais **non câblé** et hors design system (classes `slate-*` au lieu des tokens) — à réintégrer proprement ou retirer quand de vrais témoignages existent
 
 ---
 
 ## État technique actuel
 
-| Élément                                  | État      |
-| ---------------------------------------- | --------- |
-| Astro 6.4.8 + Content Layer API          | ✅         |
-| i18n FR (défaut) + EN + ES               | ✅         |
-| 4 projets × 3 langues (12 markdown)      | ✅         |
-| Sections About + Contact                 | ✅         |
-| Switcher 3 langues                       | ✅         |
-| OG tags + meta description               | ✅         |
-| vercel.json (redirect / → /fr/)          | ✅         |
-| Build statique 36 pages                  | ✅         |
-| pnpm + Node 24                           | ✅         |
-| Design system (tokens.css + Bunny Fonts) | ✅         |
-| Homepage refonte PME                     | ✅         |
-| Déploiement Vercel                       | ❌ à faire |
+| Élément                                   | État       |
+| ----------------------------------------- | ---------- |
+| Astro 6.4.8 + Content Layer API           | ✅          |
+| i18n FR (défaut) + EN + ES                | ✅          |
+| 4 projets × 3 langues (12 markdown)       | ✅          |
+| Sections About + Contact                  | ✅          |
+| Switcher 3 langues                        | ✅          |
+| OG tags + meta description                | ✅          |
+| vercel.json (redirect / → /fr/)           | ✅          |
+| Build statique 46 pages                   | ✅          |
+| pnpm + Node 24                            | ✅          |
+| Design system (tokens.css + Bunny Fonts)  | ✅          |
+| Homepage refonte PME                      | ✅          |
+| Déploiement Vercel                        | ✅ en ligne |
+| Domaine paul-sebas.fr (OVHCloud)          | ✅          |
+| Formspree contact (ID xkolnlgd)           | ✅          |
+| Vercel Analytics                          | ✅          |
+| Nav + footer enrichis (Blog/Réalisations) | ✅          |
 
 ---
 
@@ -182,7 +197,7 @@
 | `TrustIndicators.astro` | ✅    | 🟡 Moyenne | Badges de confiance                           |
 | `ContactForm.astro`     | ✅    | 🔴 Haute   | Formspree (à configurer: prop `formId`)       |
 | `CTASection.astro`      | ✅    | 🔴 Haute   | Section CTA réutilisable (fin de chaque page) |
-| `Testimonials.astro`    | ❌    | 🟡 Moyenne | Témoignages (fictifs → réels)                 |
+| `Testimonials.astro`    | ✅    | 🟡 Moyenne | Témoignages — composant prêt, à peupler avec vrais clients |
 
 ---
 
@@ -196,40 +211,28 @@
 - [x] OG meta : `og:url`, `og:image` (1200×630), `twitter:card` large
 - [x] Meta descriptions refondues (axe PME, non dev-portfolio)
 - [x] Image OG par défaut (`public/og-default.png`, 1200×630) ✅
-- [ ] `site:` dans `astro.config.mjs` = `https://paul-sebas.fr` — **à mettre à jour** avec le vrai domaine (Phase 9)
-- [ ] Google Search Console — après déploiement (Phase 9)
+- [x] `site:` dans `astro.config.mjs` = `https://paul-sebas.fr` ✅
+- [ ] Google Search Console — sitemap soumis, en attente d'indexation (erreur temporaire DNS propagation)
 
 ---
 
-## Phase 9 — Déploiement Vercel ⚠️ (prep code ✅ — actions manuelles restantes)
+## Phase 9 — Déploiement Vercel ✅ (site en ligne)
 
-### ✅ Préparation technique (code, fait)
-
-- [x] `vercel.json` — `framework:astro`, `buildCommand`, `outputDirectory:dist`, `installCommand:pnpm install`, redirect `/` → `/fr/` permanent (301)
-- [x] `.node-version` — `24` (Vercel lit ce fichier)
-- [x] `package.json` — `engines.node: ">=24"`
-- [x] `astro.config.mjs` — `site: "https://paul-sebas.fr"` ✅
-- [x] `public/robots.txt` — sitemap pointant vers `paul-sebas.fr` ✅
-
-### ⚠️ Actions manuelles (dans l'ordre)
-
-1. **Domaine** — ✅ `paul-sebas.fr` acheté chez OVHCloud
-
-2. **Vercel** — connecter GitHub :
-   - Aller sur vercel.com → New Project → importer `Paul-Sebas-Pro/my_portfolio`
-   - Build: `pnpm run build` | Output: `dist` | Node: **24** (auto-détecté via `.node-version`)
-   - Configurer domaine custom dans Vercel dashboard (pointer DNS OVHCloud → Vercel)
-
-3. **Formspree** — activer le formulaire :
-   - formspree.io → créer formulaire → copier ID
-   - `src/pages/{fr,en,es}/index.astro` : ajouter `formId="VOTRE_ID"` sur `<ContactForm>`
-
-4. **OG image** — ✅ `public/og-default.png` 1200×630 PNG créée
-
-5. **Post-déploiement** :
-   - [ ] Google Search Console — soumettre sitemap `https://paul-sebas.fr/sitemap-index.xml`
-   - [ ] Analytics : Vercel Analytics (gratuit, 1 ligne) ou Umami (auto-hébergé, RGPD strict)
-   - [ ] Tester les 46 routes + redirect `/` → `/fr/`
+- [x] `vercel.json` — redirect `/` → `/fr/` permanent (301)
+- [x] `.node-version` 24 + `engines.node >=24`
+- [x] `astro.config.mjs` — `site: "https://paul-sebas.fr"`
+- [x] `public/robots.txt` — sitemap `paul-sebas.fr`
+- [x] Domaine `paul-sebas.fr` — OVHCloud, DNS A `76.76.21.21` + CNAME `www`
+- [x] Vercel — GitHub connecté, build automatique sur push
+- [x] Formspree `xkolnlgd` — activé FR + EN + ES
+- [x] OG image `public/og-default.png` 1200×630
+- [x] Vercel Analytics — script injecté dans MainLayout
+- [x] Nav enrichi : Services / Réalisations / Blog / Contact (liens absolus)
+- [x] Footer 4 colonnes : Services, Contenu, Zones, liens sociaux
+- [x] Google Search Console — sitemap soumis `https://paul-sebas.fr/sitemap-index.xml`
+  → en attente d'indexation (erreur temporaire, vérifier demain)
+- [x] Tester formulaire contact (envoyer un message test)
+- [x] Vérifier redirect `paul-sebas.fr` → `paul-sebas.fr/fr/`
 
 ---
 
@@ -239,12 +242,16 @@
 
 ### Malt (priorité 1)
 
+> Contrainte : CDI France métropolitaine + freelance ~10h/semaine. Remote uniquement. Missions courtes, tarification forfait.  
+> Contenu profil préparé dans `1.BUSINESS/malt-profil.md`
+
 - [ ] Créer profil Malt avec photo professionnelle
 - [ ] Titre : "Développeur Full-Stack | Sites web et automatisation pour PME"
-- [ ] Description orientée résultats (pas stack)
-- [ ] Lien portfolio Vercel
+- [ ] Description orientée résultats (pas stack) — voir `1.BUSINESS/malt-profil.md`
+- [ ] Lien portfolio paul-sebas.fr
 - [ ] Mots-clés niche : React, Node.js, PostgreSQL, Docker, maintenance, API
-- [ ] Tarif journalier : définir (benchmark Malt ~350-500€/j profil intermédiaire)
+- [ ] TJM fictif Malt : 420€/j (pour filtres) — facturer en forfait réel
+- [ ] Renseigner disponibilité partielle + missions courtes
 
 ### LinkedIn (priorité 2 — activation J60+)
 
@@ -255,8 +262,10 @@
 
 ### Agences web sous-traitance (priorité 1 — cash rapide)
 
-- [ ] Liste 10-15 agences web FR (Martinique, Guadeloupe, France)
-- [ ] Email court de présentation (template dans `1.BUSINESS/1.ROADMAP/roadmap.md`)
+- [x] Liste 15 agences (Martinique, Guadeloupe, France) — `1.BUSINESS/liste-agences.md`
+- [x] Templates email — `1.BUSINESS/email-agences.md` (2 versions : Antilles + France)
+- [ ] Envoyer emails semaine 1 : Martinique + Guadeloupe (angle origine martiniquaise)
+- [ ] Envoyer emails semaine 2 : France métropolitaine (volume)
 - [ ] Profil GitHub polish (README projets)
 
 ### Facebook groupes Antilles (priorité 3)

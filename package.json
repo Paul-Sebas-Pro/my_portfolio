@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "paul-sebas.fr — portfolio et site d'acquisition (Astro, i18n FR/EN/ES, SEO zone + secteur)",
   "main": "index.js",
   "scripts": {
     "dev": "astro dev",
@@ -12,9 +12,10 @@
     "type": "git",
     "url": "git@github.com-pro:Paul-Sebas-Pro/my_portfolio.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["portfolio", "astro", "freelance", "seo"],
+  "author": "Paul Sebas",
+  "license": "UNLICENSED",
+  "private": true,
   "type": "module",
   "engines": {
     "node": ">=24"
